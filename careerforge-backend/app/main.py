@@ -1,14 +1,29 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 
 from app.services.document_parser import extract_text
 from app.ai.mock_ai import MockAIService
 from app.services.analysis_service import analyze_candidate
+from app.services.roadmap_service import (
+    generate_learning_roadmap,
+    generate_skill_gap_roadmap,
+)
+from app.schemas.analysis import SkillGapResult
+from app.schemas.roadmap import SkillGapPayload
 
 app = FastAPI(
     title="CareerForge AI",
     description="AI-powered career readiness and interview preparation platform",
     version="0.1.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://127.0.0.1:5173", "http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 ai_service = MockAIService()
@@ -185,3 +200,13 @@ async def analyze(
             status_code=500,
             detail=f"Analysis failed: {str(e)}"
         )
+
+
+@app.post("/api/roadmap")
+async def roadmap(payload: SkillGapPayload):
+    return generate_skill_gap_roadmap(payload)
+
+
+@app.post("/api/roadmap/legacy")
+async def roadmap_legacy(skill_gaps: SkillGapResult):
+    return generate_learning_roadmap(skill_gaps)

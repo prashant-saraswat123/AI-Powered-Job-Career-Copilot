@@ -91,8 +91,31 @@ class SkillGap(BaseModel):
 class SkillGapResult(BaseModel):
     skill_gaps: list[SkillGap] = []
 
+
+class LearningResource(BaseModel):
+    title: str
+    url: str
+    type: str = "resource"
+    description: str = ""
+
+
+class RoadmapItem(BaseModel):
+    skill: str
+    priority: Priority
+    required_level: str | None = None
+    reason: str
+    learning_sequence: list[str] = []
+    resources: list[LearningResource] = []
+    practice_tasks: list[str] = []
+
+
+class LearningRoadmap(BaseModel):
+    roadmap: list[RoadmapItem] = []
+
+
 class AnalysisResult(BaseModel):
     candidate_profile: CandidateProfile
     job_profile: JobProfile
     requirement_analysis: list[RequirementMatch]
     skill_gaps: SkillGapResult
+    learning_roadmap: LearningRoadmap | None = None

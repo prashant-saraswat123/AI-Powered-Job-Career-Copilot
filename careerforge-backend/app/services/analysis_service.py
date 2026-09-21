@@ -2,6 +2,7 @@ from app.ai.base import AIService
 from app.schemas.analysis import AnalysisResult
 from app.services.matcher import match_requirements
 from app.services.gap_analyzer import extract_skill_gaps
+from app.services.roadmap_service import generate_learning_roadmap
 
 
 async def analyze_candidate(
@@ -23,9 +24,12 @@ async def analyze_candidate(
         requirement_analysis
     )
 
+    learning_roadmap = generate_learning_roadmap(skill_gaps)
+
     return AnalysisResult(
         candidate_profile=candidate_profile,
         job_profile=job_profile,
         requirement_analysis=requirement_analysis,
         skill_gaps=skill_gaps,
+        learning_roadmap=learning_roadmap,
     )
