@@ -1,0 +1,13 @@
+# Python virtual environment (both naming conventions)
+.venv/
+venv/
+
+# Bytecode
+__pycache__/
+*.pyc
+
+# Environment variables (never commit secrets)
+.env
+
+# Runtime upload artifacts (not source code)
+uploads/*

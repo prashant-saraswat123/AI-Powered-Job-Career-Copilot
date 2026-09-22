@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Career Copilot</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"#0f131d","on-tertiary-container":"#3e2400","on-secondary-container":"#00311f","on-tertiary-fixed":"#2a1700","on-secondary-fixed":"#002113","on-surface-variant":"#c5c5d7","primary-fixed-dim":"#bdc2ff","inverse-surface":"#dfe2f1","tertiary-fixed":"#ffddb8","surface-tint":"#bdc2ff","error-container":"#93000a","on-primary-fixed":"#000865","surface":"#0f131d","outline":"#8f8fa0","on-tertiary":"#472a00","on-secondary":"#003824","on-primary-container":"#00108d","secondary-fixed-dim":"#4edea3","on-primary-fixed-variant":"#1d2fc3","outline-variant":"#454655","primary":"#bdc2ff","surface-container-lowest":"#0a0e18","secondary-container":"#00a572","inverse-on-surface":"#2c303b","tertiary-container":"#ca8100","secondary":"#4edea3","error":"#ffb4ab","tertiary-fixed-dim":"#ffb95f","surface-container-high":"#262a35","on-primary":"#00139f","on-background":"#dfe2f1","surface-container-low":"#171b26","surface-dim":"#0f131d","inverse-primary":"#3c4cdb","on-error":"#690005","on-tertiary-fixed-variant":"#653e00","on-surface":"#dfe2f1","on-secondary-fixed-variant":"#005236","surface-container-highest":"#313540","primary-fixed":"#dfe0ff","primary-container":"#7886ff","tertiary":"#ffb95f","on-error-container":"#ffdad6","surface-bright":"#353944","secondary-fixed":"#6ffbbe","surface-variant":"#313540","surface-container":"#1c1f2a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-2xl":"3rem","margin":"2rem","space-2xs":"0.25rem","margin-mobile":"1rem","gutter-mobile":"1rem","space-sm":"0.75rem","space-md":"1rem","space-xs":"0.5rem","gutter":"1.5rem","space-lg":"1.5rem"},"fontFamily":{"body-md":["Manrope"],"body-lg":["Manrope"],"headline-lg-mobile":["Plus Jakarta Sans"],"title-md":["Manrope"],"label-badge":["Manrope"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Manrope"],"display-hero-mobile":["Plus Jakarta Sans"],"label-code":["JetBrains Mono"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"]},"fontSize":{"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.45)]"><div class="h-28 w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col justify-between pt-space-xs pb-space-xs"><div class="flex items-center justify-between h-14"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" href="../index.html"><img alt="Career Copilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WulXIdmjnfBMvbSw67U99vu01KlISsdFceqF1rw7P9BIXUR_sNMlpYAr2aY7FVcz2kzeJVMwTbcWxhxjD9R8ADbkreAxwvTIcQNvoRlEeUcCwY_OQJfEtRgDnxALk7CmmQCbZ4JHby0EDQhN9RwMZInG9V_G0mMqUOMrza0adpF1E72TItNbig7I58FJ_yzkooO9CeO43BtPBfinSUkxTxEA8I1Ucx3zBngm14dlTWIXTqFpxumxwMtCOT"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Career Copilot</span></a><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-high"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-code text-label-code text-on-surface uppercase tracking-wider font-semibold">Target: Senior Product Manager @ Stripe</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container"><span class="font-label-badge text-label-badge uppercase text-secondary font-bold">Copilot v2.4</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-body-sm text-body-sm text-on-surface-variant">Active Analysis</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCajukYYkSdWPP7DxDjjLUTkqwfn-juAWcWCxKvJbtl2Msm9fH6BbLgchnHj5Fl2kStYGCyTAtehBKLVylzNi8WaArSVSgr37fuC78xx52uZdl8QxBz81i_y_MY6VkPWMEgjvPOt05agdcR7L6CG1q8HQ7ZELYzko9xVmEno_qPHlG6_jXrhjMTsjQe4omxp4UiDWDGafRdKHtFaj63HEb-BQrd4_i0yRZJydXJ-5GNlN9gC5CVmX8ZA"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span></div><div class="hidden sm:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface">Alex Mercer</span><span class="font-body-sm text-body-sm text-on-surface-variant">Executive Member</span></div></div></div></div><div class="flex items-center justify-between h-11"><nav class="flex items-center gap-space-xs overflow-x-auto py-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="setup-intake" href="../index.html">Setup &amp; Intake</a><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="career-analysis" href="analysis.html">Career Analysis</a><a aria-current="page" class="px-space-md py-space-2xs transition-colors whitespace-nowrap bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="action-roadmap" href="roadmap.html">Action Roadmap</a><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="interview-studio" href="interview.html">Interview Studio</a><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="profile-context" href="#">Profile &amp; Context</a></nav><div class="hidden lg:flex items-center gap-space-sm"><div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low"><span class="font-label-code text-label-code text-secondary font-bold">72% READINESS</span><span class="text-outline-variant">•</span><span class="font-label-code text-label-code text-tertiary font-bold">3 GAPS</span></div><button class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-base">bolt</span><span>Copilot Prompt</span></button></div></div></div></header><main class="w-full pt-28 bg-background min-h-[calc(100vh-140px)]"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin py-space-lg flex flex-col gap-space-xl">
+<!-- Top Decorative Ambient Glow -->
+<div class="relative w-full overflow-hidden rounded-xl bg-surface-container-low p-space-lg md:p-space-xl shadow-xl">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/3 -bottom-20 w-80 h-80 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<!-- Roadmap Header & Meta -->
+<div class="relative z-10 flex flex-col gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-space-xs py-space-2xs rounded-full bg-surface-container-high text-primary font-label-badge text-label-badge uppercase tracking-wider">STRATEGY FLIGHT PLAN</span>
+<span class="text-on-surface-variant font-label-code text-label-code">CALIBRATION-ID: AP-9042</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="text-secondary font-label-code text-label-code font-bold">READY SCORE BOOST: +18% TARGET</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Personalized Action Roadmap: Lead Product Manager (Platform)</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Close 3 high-priority competency gaps and elevate readiness from 72% to 90% before target interviews.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs self-start lg:self-center">
+<button class="flex items-center gap-space-2xs px-space-md py-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md text-body-md transition-all shadow-sm" id="regenBtn" type="button">
+<span class="material-symbols-outlined text-base text-primary">sync</span>
+<span>Regenerate Plan</span>
+</button>
+<button class="flex items-center gap-space-2xs px-space-md py-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-md text-body-md transition-all shadow-sm" id="exportBtn" type="button">
+<span class="material-symbols-outlined text-base text-secondary">calendar_add_on</span>
+<span>Export Sync</span>
+</button>
+<button class="flex items-center gap-space-2xs px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-body-md text-body-md font-semibold transition-all hover:opacity-95 shadow-md" type="button">
+<span class="material-symbols-outlined text-base">rocket_launch</span>
+<span>Share Plan</span>
+</button>
+</div>
+</div>
+<!-- Telemetry & Sprint Metrics Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-xs">
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container/70 shadow-sm">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">Target Cadence</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">4 Weeks</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Focused Sprint</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline-variant mt-1">6 Structured Milestones • 12 Items</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container/70 shadow-sm">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">Current Trajectory</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">1 / 6 Done</span>
+<span class="font-label-code text-label-code text-secondary font-semibold">(17%)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">2 in progress • 3 queued</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container/70 shadow-sm">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">Projected Output</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">3 Artifacts</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+ 1 Drill</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline-variant mt-1">Portfolio grade case studies</span>
+</div>
+<div class="flex flex-col p-space-sm rounded-lg bg-surface-container/70 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">Score Surge</span>
+<span class="font-label-code text-label-code text-tertiary font-bold">+18 pts</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 mt-2 overflow-hidden">
+<div class="bg-gradient-to-r from-secondary via-primary to-primary-container h-full rounded-full w-[72%] transition-all duration-500"></div>
+</div>
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant mt-1">
+<span>72% Baseline</span>
+<span class="text-on-surface font-semibold">90% Target</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Generation Banner & Realtime Filters -->
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-primary">tune</span>
+          Sprint Pace:
+        </span>
+<div class="inline-flex p-1 rounded-lg bg-surface-container-low shadow-inner">
+<button class="pace-toggle px-space-sm py-space-2xs rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all" id="pace5" type="button">5 hrs / week</button>
+<button class="pace-toggle px-space-sm py-space-2xs rounded-lg bg-surface-container-high text-on-surface font-semibold font-body-sm text-body-sm shadow-sm transition-all" id="pace10" type="button">10 hrs / week (Accelerated)</button>
+</div>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 md:pb-0">
+<span class="font-body-sm text-body-sm text-on-surface-variant mr-1 hidden sm:inline">Filter Focus:</span>
+<button class="filter-btn active px-space-sm py-space-2xs rounded-full bg-primary-container text-on-primary-container font-label-code text-label-code font-bold whitespace-nowrap transition-all" data-filter="all">All Gaps (3)</button>
+<button class="filter-btn px-space-sm py-space-2xs rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-code text-label-code whitespace-nowrap transition-all" data-filter="monetization">Platform Monetization</button>
+<button class="filter-btn px-space-sm py-space-2xs rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-code text-label-code whitespace-nowrap transition-all" data-filter="regulatory">Fintech Regulatory</button>
+<button class="filter-btn px-space-sm py-space-2xs rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-code text-label-code whitespace-nowrap transition-all" data-filter="interview">Interview Readiness</button>
+</div>
+</div>
+<!-- Main Dynamic Layout: Roadmap Track (Left) & Context Drawer (Right) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Chronological Phased Milestone Plan (Left Col 8) -->
+<div class="xl:col-span-8 flex flex-col gap-space-xl">
+<!-- Phase 1 -->
+<div class="phase-group flex flex-col gap-space-md" data-category="monetization">
+<div class="flex items-center justify-between pb-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center justify-center w-7 h-7 rounded-lg bg-surface-container-high text-primary font-label-code text-label-code font-bold">W1</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-bold tracking-tight">Phase 1: Evidence Calibration &amp; Resume Precision</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Focus: Hard quantified platform metrics &amp; API distribution models</p>
+</div>
+</div>
+<span class="px-space-xs py-space-2xs rounded-full bg-secondary/15 text-secondary font-label-badge text-label-badge font-bold uppercase">50% Complete</span>
+</div>
+<!-- Milestone Card 1.1 -->
+<div class="milestone-card group relative p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-md" data-milestone="1-1" data-tags="monetization interview">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 w-5 h-5 rounded-md bg-secondary text-on-secondary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-code text-label-code text-secondary font-bold">MILESTONE 1.1</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="px-space-2xs py-0.5 rounded bg-surface-container-lowest text-secondary font-label-badge text-label-badge uppercase font-semibold">Verified Evidence</span>
+<span class="text-on-surface-variant font-label-code text-label-code">Est. 2 hrs</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Quantify Platform API Scale in Resume</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rewrite bullet 3 of Stripe/Fintech resume with throughput numbers (e.g. 50M daily calls, 99.99% uptime, 420ms p99 latency guarantees).</p>
+<div class="flex items-center gap-space-sm pt-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-sm">inventory_2</span> 1 Resume Bullet Updated
+                    </span>
+<button class="open-drawer-btn text-primary hover:text-primary-fixed font-body-sm text-body-sm font-semibold inline-flex items-center gap-1" data-target="1-1" type="button">
+                      View Calibration Notes <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+</div>
+</div>
+<!-- Milestone Card 1.2 -->
+<div class="milestone-card group relative p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-md" data-milestone="1-2" data-tags="monetization">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 w-5 h-5 rounded-md bg-tertiary/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-code text-label-code text-tertiary font-bold">MILESTONE 1.2</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="px-space-2xs py-0.5 rounded bg-tertiary/15 text-tertiary font-label-badge text-label-badge uppercase font-semibold">In Progress</span>
+<span class="text-on-surface-variant font-label-code text-label-code">Est. 4 hrs</span>
+<span class="px-space-2xs py-0.5 rounded bg-surface-container-lowest text-primary font-label-code text-label-code">High-Priority Gap #1</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Draft API Monetization Case Narrative</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Synthesize a 1-page writeup of developer fee models vs usage-based metering based on Stripe Billing &amp; Twilio precedents.</p>
+<div class="flex items-center gap-space-sm pt-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-tertiary font-medium">
+<span class="material-symbols-outlined text-sm">schedule</span> Due in 2 days
+                    </span>
+<button class="open-drawer-btn text-primary hover:text-primary-fixed font-body-sm text-body-sm font-semibold inline-flex items-center gap-1" data-target="1-2" type="button">
+                      Review Deliverable Brief <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Phase 2 -->
+<div class="phase-group flex flex-col gap-space-md" data-category="regulatory">
+<div class="flex items-center justify-between pb-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center justify-center w-7 h-7 rounded-lg bg-surface-container-high text-primary font-label-code text-label-code font-bold">W2</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-bold tracking-tight">Phase 2: Domain Deepening: Fintech Compliance &amp; Open Banking</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Focus: PSD2 frameworks, data sovereignty boundaries, and sandbox security controls</p>
+</div>
+</div>
+<span class="px-space-xs py-space-2xs rounded-full bg-surface-container-high text-on-surface-variant font-label-badge text-label-badge font-bold uppercase">Ready</span>
+</div>
+<!-- Milestone Card 2.1 -->
+<div class="milestone-card group relative p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-md" data-milestone="2-1" data-tags="regulatory">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 w-5 h-5 rounded-md bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-code text-label-code text-primary font-bold">MILESTONE 2.1</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="px-space-2xs py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-badge text-label-badge uppercase font-semibold">Ready to Start</span>
+<span class="text-on-surface-variant font-label-code text-label-code">Est. 3.5 hrs</span>
+<span class="px-space-2xs py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-label-code">Gap #2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">PSD2 / Open Banking Regulatory Framework Audit</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Execute a 4-point architecture audit evaluating consent management APIs, Strong Customer Authentication (SCA), and liability models.</p>
+<div class="flex items-center gap-space-sm pt-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-sm">menu_book</span> Reading dossier curated (3 documents)
+                    </span>
+<button class="open-drawer-btn text-primary hover:text-primary-fixed font-body-sm text-body-sm font-semibold inline-flex items-center gap-1" data-target="2-1" type="button">
+                      Inspect Rubric <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+</div>
+</div>
+</div>
+<!-- Milestone Card 2.2 -->
+<div class="milestone-card group relative p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-md" data-milestone="2-2" data-tags="regulatory interview">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 w-5 h-5 rounded-md bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">schedule</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-code text-label-code text-on-surface-variant font-bold">MILESTONE 2.2</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="px-space-2xs py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-badge text-label-badge uppercase font-semibold">Queued</span>
+<span class="text-on-surface-variant font-label-code text-label-code">Est. 1.5 hrs</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Simulate Regulatory Review Discussion</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Roleplay a live stakeholder defense against a strict EU compliance auditor challenging data custody across third-party fintech aggregators.</p>
+<div class="flex items-center gap-space-sm pt-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-primary font-medium">
+<span class="material-symbols-outlined text-sm">mic</span> Studio Mock Ready
+                    </span>
+<button class="open-drawer-btn text-primary hover:text-primary-fixed font-body-sm text-body-sm font-semibold inline-flex items-center gap-1" data-target="2-2" type="button">
+                      View Simulation Prompts <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Phase 3 -->
+<div class="phase-group flex flex-col gap-space-md" data-category="monetization">
+<div class="flex items-center justify-between pb-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center justify-center w-7 h-7 rounded-lg bg-surface-container-high text-primary font-label-code text-label-code font-bold">W3</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-bold tracking-tight">Phase 3: Ecosystem Strategy &amp; Partner Experience</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Focus: Multi-tenant developer portal SLAs, webhook reliability, and developer onboarding velocity</p>
+</div>
+</div>
+<span class="px-space-xs py-space-2xs rounded-full bg-surface-container-high text-on-surface-variant font-label-badge text-label-badge font-bold uppercase">Pending W1 &amp; W2</span>
+</div>
+<!-- Milestone Card 3.1 -->
+<div class="milestone-card group relative p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-md" data-milestone="3-1" data-tags="monetization interview">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 w-5 h-5 rounded-md bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">lock</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-code text-label-code text-outline font-bold">MILESTONE 3.1</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="px-space-2xs py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-badge text-label-badge uppercase font-semibold">Deliverable Lock</span>
+<span class="text-on-surface-variant font-label-code text-label-code">Est. 5 hrs</span>
+<span class="px-space-2xs py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-label-code">Gap #3</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Developer Portal PRD &amp; Partner SLA Specification</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Generate a structured PRD outlining Tier-1 enterprise uptime tiers, automated fallback failovers, and webhook replay mechanics.</p>
+<div class="flex items-center gap-space-sm pt-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-sm">description</span> Core Artifact: Ready for Stripe onsite
+                    </span>
+<button class="open-drawer-btn text-primary hover:text-primary-fixed font-body-sm text-body-sm font-semibold inline-flex items-center gap-1" data-target="3-1" type="button">
+                      Preview Template <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Phase 4 -->
+<div class="phase-group flex flex-col gap-space-md" data-category="interview">
+<div class="flex items-center justify-between pb-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center justify-center w-7 h-7 rounded-lg bg-surface-container-high text-primary font-label-code text-label-code font-bold">W4</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-bold tracking-tight">Phase 4: Mock Interview Simulation &amp; Readiness Re-Assessment</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Focus: High-pressure mixed functional loop &amp; automated gap closure verification</p>
+</div>
+</div>
+<span class="px-space-xs py-space-2xs rounded-full bg-surface-container-high text-on-surface-variant font-label-badge text-label-badge font-bold uppercase">Final Calibration</span>
+</div>
+<!-- Milestone Card 4.1 -->
+<div class="milestone-card group relative p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-md" data-milestone="4-1" data-tags="interview">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 w-5 h-5 rounded-md bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">videocam</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-code text-label-code text-outline font-bold">MILESTONE 4.1</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="px-space-2xs py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-badge text-label-badge uppercase font-semibold">Simulated Loop</span>
+<span class="text-on-surface-variant font-label-code text-label-code">Est. 1 hr</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Complete 45-min Mixed Platform Leadership Interview</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Live Copilot synthetic interview covering API versioning deprecation strategies, regulatory friction handling, and team scale trade-offs.</p>
+</div>
+</div>
+<button class="open-drawer-btn text-primary hover:text-primary-fixed font-body-sm text-body-sm font-semibold shrink-0" data-target="4-1" type="button">
+                Details
+              </button>
+</div>
+</div>
+<!-- Milestone Card 4.2 -->
+<div class="milestone-card group relative p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer shadow-md" data-milestone="4-2" data-tags="interview">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="mt-1 w-5 h-5 rounded-md bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-code text-label-code text-outline font-bold">MILESTONE 4.2</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="px-space-2xs py-0.5 rounded bg-surface-container-lowest text-secondary font-label-badge text-label-badge uppercase font-semibold">Gate Check</span>
+<span class="text-on-surface-variant font-label-code text-label-code">Est. 30 min</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Run Final Career Readiness Scan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Regenerate target score benchmark against Stripe Lead PM baseline. Target threshold: ≥ 90% verified competence across all 6 core vectors.</p>
+</div>
+</div>
+<button class="open-drawer-btn text-primary hover:text-primary-fixed font-body-sm text-body-sm font-semibold shrink-0" data-target="4-2" type="button">
+                Details
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Contextual Milestone Detail Drawer / Analytical Inspection Panel (Right Col 4) -->
+<div class="xl:col-span-4 sticky top-32 flex flex-col gap-space-md">
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-2xl flex flex-col gap-space-md transition-all" id="drawerPanel">
+<!-- Drawer Header -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="p-1 rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-base">center_focus_strong</span>
+</span>
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider font-semibold">Inspection Console</span>
+</div>
+<span class="px-space-xs py-space-2xs rounded-full bg-tertiary/15 text-tertiary font-label-badge text-label-badge font-bold uppercase" id="detailStatusBadge">In Progress</span>
+</div>
+<!-- Dynamic Title & Identification -->
+<div>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant mb-1">
+<span id="detailCode">MILESTONE 1.2</span>
+<span>•</span>
+<span id="detailEffort">Est. 4 hours</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight" id="detailTitle">Draft API Monetization Case Narrative</h3>
+</div>
+<!-- Section 1: Gap Addressed -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs text-tertiary">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="font-label-code text-label-code font-bold uppercase">Target Gap Addressed</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium" id="detailGapText">Gap #1: Monetization Strategy for Infrastructure Products (Currently Level 2 / Target Level 4)</p>
+</div>
+<!-- Section 2: Why it Matters -->
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase font-semibold">Why It Matters</span>
+<p class="font-body-md text-body-md text-on-surface-variant" id="detailWhyText">Stripe platform PM interviews heavily weigh ability to design commercial constructs that preserve developer trust while maximizing Net Expansion Rate (NER). Demonstrating clear mental models on seat vs consumption tiering removes recruiter doubt.</p>
+</div>
+<!-- Section 3: Expected Outcome & Concrete Artifact -->
+<div class="flex flex-col gap-space-xs p-space-sm rounded-lg bg-surface-container-highest">
+<span class="font-label-code text-label-code text-primary font-bold uppercase">Expected Output Artifact</span>
+<p class="font-body-md text-body-md text-on-surface" id="detailArtifactText">A 1-page executive brief: "SaaS API Monetization Matrix" featuring overage tiers, credit commitments, and partner revenue share models.</p>
+<div class="flex items-center gap-space-2xs pt-1">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Interview-Ready Case Proof</span>
+</div>
+</div>
+<!-- Drawer Action Controls -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-lg bg-secondary text-on-secondary font-body-md text-body-md font-bold transition-all hover:opacity-95 shadow-md" id="toggleDoneBtn" type="button">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span id="markDoneLabel">Mark Milestone as Completed</span>
+</button>
+<a class="w-full flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-md text-body-md font-semibold transition-all" data-path="interview-studio" href="interview.html">
+<span class="material-symbols-outlined text-base text-primary">play_circle</span>
+<span>Rehearse in Interview Studio</span>
+</a>
+<button class="w-full text-center py-space-2xs text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" id="viewRubricBtn" type="button">
+              Explore Gap Benchmark Rubric
+            </button>
+</div>
+</div>
+<!-- Copilot Mini Coach Card -->
+<div class="p-space-md rounded-xl bg-surface-container/60 shadow-md flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-code text-label-code text-primary font-bold">COPILOT ADVISORY</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Focusing on <strong class="text-on-surface">Milestone 1.2</strong> first unlocks the strongest leverage point. 84% of candidates fail Stripe's product sense round when asked how to price enterprise rate-limit bypasses.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar / Studio Bridge -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-surface-container-high via-surface-container to-surface-container-low p-space-lg md:p-space-xl shadow-2xl mt-space-md">
+<div class="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-primary-container/10 to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
+<div class="flex items-center gap-space-md max-w-2xl">
+<div class="w-14 h-14 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 shadow-lg">
+<span class="material-symbols-outlined text-3xl">mic_double</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded-full bg-secondary/20 text-secondary font-label-badge text-label-badge uppercase font-bold">Direct Sprint Bridge</span>
+<span class="font-label-code text-label-code text-on-surface-variant">DRILL READY: 4 QUESTIONS</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Ready to test your newly minted roadmap progress?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Jump directly into the Interview Studio to simulate questions tailored specifically to the artifacts you just completed.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto">
+<a class="w-full md:w-auto flex items-center justify-center gap-space-xs px-space-xl py-space-md rounded-lg bg-primary text-on-primary font-body-md text-body-md font-bold transition-all hover:bg-primary-fixed shadow-lg hover:shadow-primary/30" data-path="interview-studio" href="interview.html">
+<span>Launch Interview Studio</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initRoadmapInteractions() {
+    // Milestone database for deep inspect console
+    const milestoneData = {
+      '1-1': {
+        code: 'MILESTONE 1.1',
+        title: 'Quantify Platform API Scale in Resume',
+        effort: 'Est. 2 hours',
+        status: 'Completed',
+        statusClass: 'bg-secondary/20 text-secondary',
+        gapText: 'Gap #1: Demonstrable Scale Metrics in Previous Work (Currently Verified)',
+        whyText: 'Hiring managers at Stripe & Datadog filter out resume bullets that discuss platform features without mentioning transactions per second (TPS), latency guarantees, or infrastructure cost savings.',
+        artifactText: '3 Revised resume bullets with verified operational metrics ready for export.',
+        isDone: true
+      },
+      '1-2': {
+        code: 'MILESTONE 1.2',
+        title: 'Draft API Monetization Case Narrative',
+        effort: 'Est. 4 hours',
+        status: 'In Progress',
+        statusClass: 'bg-tertiary/15 text-tertiary',
+        gapText: 'Gap #1: Monetization Strategy for Infrastructure Products (Level 2 -> Level 4)',
+        whyText: 'Stripe platform PM interviews heavily weigh ability to design commercial constructs that preserve developer trust while maximizing Net Expansion Rate (NER).',
+        artifactText: 'A 1-page executive brief: "SaaS API Monetization Matrix" featuring overage tiers, credit commitments, and partner revenue share models.',
+        isDone: false
+      },
+      '2-1': {
+        code: 'MILESTONE 2.1',
+        title: 'PSD2 / Open Banking Regulatory Framework Audit',
+        effort: 'Est. 3.5 hours',
+        status: 'Ready to Start',
+        statusClass: 'bg-surface-container-highest text-primary',
+        gapText: 'Gap #2: Cross-Border Regulatory Architecture (Level 1 -> Level 3)',
+        whyText: 'Open banking requirements introduce stringent latency penalties due to mandatory real-time token validation and fallback paths.',
+        artifactText: 'Compliance Checklist: 8 security safeguards required for fintech API gateway federation.',
+        isDone: false
+      },
+      '2-2': {
+        code: 'MILESTONE 2.2',
+        title: 'Simulate Regulatory Review Discussion',
+        effort: 'Est. 1.5 hours',
+        status: 'Queued',
+        statusClass: 'bg-surface-container-highest text-on-surface-variant',
+        gapText: 'Gap #2: Cross-Border Regulatory Architecture',
+        whyText: 'Platform leaders must converse fluently with chief risk officers and legal teams without defaulting to engineering jargon.',
+        artifactText: 'AI Mock recording score rubric assessing conciseness and risk mitigation.',
+        isDone: false
+      },
+      '3-1': {
+        code: 'MILESTONE 3.1',
+        title: 'Developer Portal PRD & Partner SLA Specification',
+        effort: 'Est. 5 hours',
+        status: 'Deliverable Lock',
+        statusClass: 'bg-surface-container-highest text-outline',
+        gapText: 'Gap #3: Ecosystem Developer Experience (DX)',
+        whyText: 'World-class developer experience is measured by time-to-first-successful-API-call (TTFC). Top PMs treat dev portals as end-consumer applications.',
+        artifactText: 'Comprehensive PRD: Developer onboarding flow, sandbox mock data generators, and webhook replay systems.',
+        isDone: false
+      },
+      '4-1': {
+        code: 'MILESTONE 4.1',
+        title: 'Complete 45-min Mixed Platform Leadership Interview',
+        effort: 'Est. 1 hour',
+        status: 'Simulated Loop',
+        statusClass: 'bg-surface-container-highest text-outline',
+        gapText: 'Comprehensive Validation: Gaps 1, 2, and 3',
+        whyText: 'Synthesizes domain mastery, communication velocity, and executive presence into a single quantifiable benchmark score.',
+        artifactText: 'Transcribed multi-round interview feedback memo with percentile ratings.',
+        isDone: false
+      },
+      '4-2': {
+        code: 'MILESTONE 4.2',
+        title: 'Run Final Career Readiness Scan',
+        effort: 'Est. 30 min',
+        status: 'Gate Check',
+        statusClass: 'bg-surface-container-highest text-secondary',
+        gapText: 'Overall Target Alignment',
+        whyText: 'Confirm readiness delta has moved above 90% across all 6 core vectors before real-world recruiter phone screens.',
+        artifactText: 'Certified Executive Readiness Report (PDF & Live URL).',
+        isDone: false
+      }
+    };
+
+    let activeMilestoneId = '1-2';
+
+    const detailCode = document.getElementById('detailCode');
+    const detailTitle = document.getElementById('detailTitle');
+    const detailEffort = document.getElementById('detailEffort');
+    const detailStatusBadge = document.getElementById('detailStatusBadge');
+    const detailGapText = document.getElementById('detailGapText');
+    const detailWhyText = document.getElementById('detailWhyText');
+    const detailArtifactText = document.getElementById('detailArtifactText');
+    const markDoneLabel = document.getElementById('markDoneLabel');
+    const toggleDoneBtn = document.getElementById('toggleDoneBtn');
+
+    function updateDrawer(id) {
+      const data = milestoneData[id];
+      if (!data) return;
+      activeMilestoneId = id;
+
+      detailCode.textContent = data.code;
+      detailTitle.textContent = data.title;
+      detailEffort.textContent = data.effort;
+      detailStatusBadge.textContent = data.status;
+      detailStatusBadge.className = `px-space-xs py-space-2xs rounded-full font-label-badge text-label-badge font-bold uppercase ${data.statusClass}`;
+      detailGapText.textContent = data.gapText;
+      detailWhyText.textContent = data.whyText;
+      detailArtifactText.textContent = data.artifactText;
+
+      markDoneLabel.textContent = data.isDone ? 'Mark as Not Completed' : 'Mark Milestone as Completed';
+
+      // Highlight active card
+      document.querySelectorAll('.milestone-card').forEach(card => {
+        if (card.dataset.milestone === id) {
+          card.classList.add('ring-2', 'ring-primary', 'bg-surface-container-high');
+        } else {
+          card.classList.remove('ring-2', 'ring-primary', 'bg-surface-container-high');
+        }
+      });
+    }
+
+    // Bind cards click
+    document.querySelectorAll('.milestone-card').forEach(card => {
+      card.addEventListener('click', () => {
+        updateDrawer(card.dataset.milestone);
+      });
+    });
+
+    // Bind open-drawer-btn clicks
+    document.querySelectorAll('.open-drawer-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateDrawer(btn.dataset.target);
+      });
+    });
+
+    // Toggle completion status
+    if (toggleDoneBtn) {
+      toggleDoneBtn.addEventListener('click', () => {
+        const item = milestoneData[activeMilestoneId];
+        if (!item) return;
+        item.isDone = !item.isDone;
+        if (item.isDone) {
+          item.status = 'Completed';
+          item.statusClass = 'bg-secondary/20 text-secondary';
+        } else {
+          item.status = 'In Progress';
+          item.statusClass = 'bg-tertiary/15 text-tertiary';
+        }
+        updateDrawer(activeMilestoneId);
+      });
+    }
+
+    // Pace switchers
+    const paceButtons = document.querySelectorAll('.pace-toggle');
+    paceButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        paceButtons.forEach(b => {
+          b.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold', 'shadow-sm');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold', 'shadow-sm');
+        btn.classList.remove('text-on-surface-variant');
+      });
+    });
+
+    // Filter focus buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const milestoneCards = document.querySelectorAll('.milestone-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary-container');
+          b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        btn.classList.add('bg-primary-container', 'text-on-primary-container');
+
+        const filter = btn.dataset.filter;
+        milestoneCards.forEach(card => {
+          const tags = card.dataset.tags || '';
+          if (filter === 'all' || tags.includes(filter)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Micro interaction feedback for export/regenerate
+    const regenBtn = document.getElementById('regenBtn');
+    if (regenBtn) {
+      regenBtn.addEventListener('click', () => {
+        const icon = regenBtn.querySelector('.material-symbols-outlined');
+        icon.classList.add('animate-spin');
+        setTimeout(() => {
+          icon.classList.remove('animate-spin');
+        }, 1000);
+      });
+    }
+
+    const exportBtn = document.getElementById('exportBtn');
+    if (exportBtn) {
+      exportBtn.addEventListener('click', () => {
+        const originalText = exportBtn.innerHTML;
+        exportBtn.innerHTML = '<span class="material-symbols-outlined text-base text-secondary">check</span><span>Sync Initiated</span>';
+        setTimeout(() => {
+          exportBtn.innerHTML = originalText;
+        }, 1800);
+      });
+    }
+
+    // Set initial selected state
+    updateDrawer('1-2');
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.3)]"><div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Career Copilot Logo" class="h-6 w-auto object-contain opacity-75" src="https://lh3.googleusercontent.com/aida/AEtjO1WulXIdmjnfBMvbSw67U99vu01KlISsdFceqF1rw7P9BIXUR_sNMlpYAr2aY7FVcz2kzeJVMwTbcWxhxjD9R8ADbkreAxwvTIcQNvoRlEeUcCwY_OQJfEtRgDnxALk7CmmQCbZ4JHby0EDQhN9RwMZInG9V_G0mMqUOMrza0adpF1E72TItNbig7I58FJ_yzkooO9CeO43BtPBfinSUkxTxEA8I1Ucx3zBngm14dlTWIXTqFpxumxwMtCOT"/><span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Career Copilot Systems. High-Stakes Career Strategy &amp; Executive Readiness.</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Role Benchmark Rubrics</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Competency Graph</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy &amp; Data Vault</a></div></div></footer></body></html>

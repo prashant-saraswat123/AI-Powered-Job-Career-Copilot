@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Career Copilot</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"#0f131d","on-tertiary-container":"#3e2400","on-secondary-container":"#00311f","on-tertiary-fixed":"#2a1700","on-secondary-fixed":"#002113","on-surface-variant":"#c5c5d7","primary-fixed-dim":"#bdc2ff","inverse-surface":"#dfe2f1","tertiary-fixed":"#ffddb8","surface-tint":"#bdc2ff","error-container":"#93000a","on-primary-fixed":"#000865","surface":"#0f131d","outline":"#8f8fa0","on-tertiary":"#472a00","on-secondary":"#003824","on-primary-container":"#00108d","secondary-fixed-dim":"#4edea3","on-primary-fixed-variant":"#1d2fc3","outline-variant":"#454655","primary":"#bdc2ff","surface-container-lowest":"#0a0e18","secondary-container":"#00a572","inverse-on-surface":"#2c303b","tertiary-container":"#ca8100","secondary":"#4edea3","error":"#ffb4ab","tertiary-fixed-dim":"#ffb95f","surface-container-high":"#262a35","on-primary":"#00139f","on-background":"#dfe2f1","surface-container-low":"#171b26","surface-dim":"#0f131d","inverse-primary":"#3c4cdb","on-error":"#690005","on-tertiary-fixed-variant":"#653e00","on-surface":"#dfe2f1","on-secondary-fixed-variant":"#005236","surface-container-highest":"#313540","primary-fixed":"#dfe0ff","primary-container":"#7886ff","tertiary":"#ffb95f","on-error-container":"#ffdad6","surface-bright":"#353944","secondary-fixed":"#6ffbbe","surface-variant":"#313540","surface-container":"#1c1f2a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-2xl":"3rem","margin":"2rem","space-2xs":"0.25rem","margin-mobile":"1rem","gutter-mobile":"1rem","space-sm":"0.75rem","space-md":"1rem","space-xs":"0.5rem","gutter":"1.5rem","space-lg":"1.5rem"},"fontFamily":{"body-md":["Manrope"],"body-lg":["Manrope"],"headline-lg-mobile":["Plus Jakarta Sans"],"title-md":["Manrope"],"label-badge":["Manrope"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Manrope"],"display-hero-mobile":["Plus Jakarta Sans"],"label-code":["JetBrains Mono"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"]},"fontSize":{"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.45)]"><div class="h-28 w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col justify-between pt-space-xs pb-space-xs"><div class="flex items-center justify-between h-14"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" href="../index.html"><img alt="Career Copilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WulXIdmjnfBMvbSw67U99vu01KlISsdFceqF1rw7P9BIXUR_sNMlpYAr2aY7FVcz2kzeJVMwTbcWxhxjD9R8ADbkreAxwvTIcQNvoRlEeUcCwY_OQJfEtRgDnxALk7CmmQCbZ4JHby0EDQhN9RwMZInG9V_G0mMqUOMrza0adpF1E72TItNbig7I58FJ_yzkooO9CeO43BtPBfinSUkxTxEA8I1Ucx3zBngm14dlTWIXTqFpxumxwMtCOT"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Career Copilot</span></a><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-high"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-code text-label-code text-on-surface uppercase tracking-wider font-semibold">Target: Senior Product Manager @ Stripe</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container"><span class="font-label-badge text-label-badge uppercase text-secondary font-bold">Copilot v2.4</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-body-sm text-body-sm text-on-surface-variant">Active Analysis</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCajukYYkSdWPP7DxDjjLUTkqwfn-juAWcWCxKvJbtl2Msm9fH6BbLgchnHj5Fl2kStYGCyTAtehBKLVylzNi8WaArSVSgr37fuC78xx52uZdl8QxBz81i_y_MY6VkPWMEgjvPOt05agdcR7L6CG1q8HQ7ZELYzko9xVmEno_qPHlG6_jXrhjMTsjQe4omxp4UiDWDGafRdKHtFaj63HEb-BQrd4_i0yRZJydXJ-5GNlN9gC5CVmX8ZA"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span></div><div class="hidden sm:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface">Alex Mercer</span><span class="font-body-sm text-body-sm text-on-surface-variant">Executive Member</span></div></div></div></div><div class="flex items-center justify-between h-11"><nav class="flex items-center gap-space-xs overflow-x-auto py-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="setup-intake" href="../index.html">Setup &amp; Intake</a><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="career-analysis" href="analysis.html">Career Analysis</a><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="action-roadmap" href="roadmap.html">Action Roadmap</a><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="interview-studio" href="interview.html">Interview Studio</a><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="profile-context" href="#">Profile &amp; Context</a></nav><div class="hidden lg:flex items-center gap-space-sm"><div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low"><span class="font-label-code text-label-code text-secondary font-bold">72% READINESS</span><span class="text-outline-variant">•</span><span class="font-label-code text-label-code text-tertiary font-bold">3 GAPS</span></div><button class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-base">bolt</span><span>Copilot Prompt</span></button></div></div></div></header><main class="w-full pt-28 bg-background min-h-[calc(100vh-140px)]"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Canvas -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-48 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Outer Container -->
+<div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin py-space-xl flex flex-col gap-space-2xl">
+<!-- 1. Report Header & Global Controls -->
+<section class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg bg-surface-container-low/90 backdrop-blur-md p-space-lg md:p-space-xl rounded-xl shadow-xl relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-secondary/10 text-secondary font-label-badge text-label-badge uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Interview Performance Dossier
+            </span>
+<span class="font-label-code text-label-code text-on-surface-variant">•</span>
+<span class="font-label-code text-label-code text-on-surface-variant">SESSION ID #CC-8492</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+            Interview Performance Report: Lead Product Manager (Platform)
+          </h1>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-space-xs text-on-surface-variant font-body-md text-body-md pt-space-2xs">
+<span class="flex items-center gap-space-2xs text-on-surface">
+<span class="material-symbols-outlined text-base text-secondary">check_circle</span>
+              Completed Today
+            </span>
+<span>•</span>
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-base">fact_check</span>
+              5 / 5 Questions Evaluated
+            </span>
+<span>•</span>
+<span class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-base">timer</span>
+              Duration: 24 mins
+            </span>
+<span>•</span>
+<span class="font-label-code text-label-code text-primary bg-primary/10 px-space-xs py-0.5 rounded">
+              Benchmark Target: Stripe L6/Staff
+            </span>
+</div>
+</div>
+<!-- Quick Top Actions -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-space-sm">
+<button class="flex items-center justify-center gap-space-2xs px-space-md py-space-sm rounded-lg bg-primary text-on-primary font-body-md text-body-md font-semibold hover:bg-primary-fixed-dim transition-all shadow-md active:scale-95 whitespace-nowrap" id="top-sync-btn" type="button">
+<span class="material-symbols-outlined text-lg">add_task</span>
+<span>Add Weaknesses to Roadmap</span>
+</button>
+<button onclick="window.location.href='interview.html'" class="flex items-center justify-center gap-space-2xs px-space-md py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-md text-body-md font-medium transition-colors whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-lg text-tertiary">replay</span>
+<span>Practice Again</span>
+</button>
+<a class="flex items-center justify-center p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" href="analysis.html" title="Return to Career Analysis">
+<span class="material-symbols-outlined text-xl">analytics</span>
+</a>
+</div>
+</section>
+<!-- 2. Overall Result & Performance Index Bento Block -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Score & Tier Card (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-low/95 backdrop-blur-md p-space-xl rounded-xl shadow-xl flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant">Overall Interview Index</span>
+<div class="flex items-baseline gap-space-2xs mt-space-2xs">
+<span class="font-display-hero text-display-hero font-extrabold text-on-surface tracking-tight">78</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant">/ 100</span>
+</div>
+</div>
+<!-- Circular Radial Micro-gauge SVG -->
+<div class="relative w-20 h-20 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3.5"></path>
+<path class="text-secondary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="78, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-code text-label-code font-bold text-secondary">78%</span>
+</div>
+</div>
+<div class="my-space-md py-space-sm px-space-md rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-title-md text-title-md text-on-surface">Readiness Tier: Strong Contender</span>
+</div>
+<span class="font-label-code text-label-code text-tertiary bg-tertiary/10 px-space-xs py-0.5 rounded font-semibold">Coaching Needed</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-2xs text-secondary font-label-code text-label-code font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+6% improvement over previous session baseline (72 / 100)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Candidate benchmarked against Stripe, Adyen, and Twilio platform product standards. Readiness trajectory projects interview clearance with targeted remediation in monetization unit economics.
+            </p>
+</div>
+</div>
+<!-- Synthesis & Executive Summary (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-low/95 backdrop-blur-md p-space-xl rounded-xl shadow-xl flex flex-col justify-between relative">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-primary">Executive Feedback Synthesis</span>
+<span class="font-label-code text-label-code text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">auto_awesome</span>
+                AI Evaluator Rubric v4.2
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">
+              “Demonstrated exceptional stakeholder management and platform vision. Scored lower on quantifiable partner monetization frameworks.”
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Your architectural instincts and developer empathy are at a Staff PM standard. However, when asked to defend a zero-downtime deprecation schedule tied to contract tiering, you focused exclusively on UX health metrics while glossing over SLA breach penalties and ARR impact.
+            </p>
+</div>
+<!-- Quick Stat Callouts -->
+<div class="grid grid-cols-3 gap-space-sm mt-space-md pt-space-md bg-surface-container-lowest/50 p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-badge text-label-badge text-on-surface-variant uppercase">Key Strength</span>
+<span class="font-title-md text-title-md text-secondary font-bold truncate">Cross-Functional</span>
+<span class="font-label-code text-label-code text-on-surface-variant">90% Rating</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-badge text-label-badge text-on-surface-variant uppercase">Primary Gap</span>
+<span class="font-title-md text-title-md text-tertiary font-bold truncate">API Monetization</span>
+<span class="font-label-code text-label-code text-on-surface-variant">64% Rating</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-badge text-label-badge text-on-surface-variant uppercase">Career Impact</span>
+<span class="font-title-md text-title-md text-primary font-bold truncate">2 Core Gaps</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Mapped to Plan</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Dynamic Category Performance (Domain-Specific) -->
+<section class="flex flex-col gap-space-md bg-surface-container-low/90 backdrop-blur-md p-space-lg md:p-space-xl rounded-xl shadow-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">
+              Domain Competency Rubric
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Evaluated against Level 6 Platform PM benchmark criteria across 5 core competency vectors.
+            </p>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant self-start sm:self-auto bg-surface-container-high px-space-sm py-space-2xs rounded-full">
+            Weighted Score: 78.4 / 100
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-md mt-space-xs">
+<!-- Category 1 -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container/70 hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-secondary font-bold">88%</span>
+<span class="px-space-xs py-0.5 rounded font-label-badge text-label-badge uppercase bg-secondary/15 text-secondary">Excellent</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mt-space-2xs">Strategic Platform Thinking</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                Long-horizon architecture, abstraction layer trade-offs, and ecosystem leverage.
+              </p>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden mt-space-md">
+<div class="bg-secondary h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container/70 hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-secondary font-bold">82%</span>
+<span class="px-space-xs py-0.5 rounded font-label-badge text-label-badge uppercase bg-secondary/15 text-secondary">Proficient</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mt-space-2xs">Partner &amp; Ecosystem Governance</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                Developer portal SLA enforcement, sandboxes, and third-party developer policies.
+              </p>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden mt-space-md">
+<div class="bg-secondary h-full rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<!-- Category 3: Weakness -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-tertiary-container/10 hover:bg-tertiary-container/15 transition-all">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-tertiary font-bold">64%</span>
+<span class="px-space-xs py-0.5 rounded font-label-badge text-label-badge uppercase bg-tertiary/20 text-tertiary font-bold">Needs Dev</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mt-space-2xs">API Monetization &amp; Pricing Models</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                Rate limiting tiering, payload overage economics, and partner revenue sharing.
+              </p>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden mt-space-md">
+<div class="bg-tertiary h-full rounded-full" style="width: 64%"></div>
+</div>
+</div>
+<!-- Category 4: Moderate -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container/70 hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-primary font-bold">72%</span>
+<span class="px-space-xs py-0.5 rounded font-label-badge text-label-badge uppercase bg-primary/20 text-primary">Competent</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mt-space-2xs">Regulatory &amp; Compliance Risk (Fintech)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                PCI-DSS compliance, GDPR data residency, and real-time audit capabilities.
+              </p>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden mt-space-md">
+<div class="bg-primary h-full rounded-full" style="width: 72%"></div>
+</div>
+</div>
+<!-- Category 5 -->
+<div class="flex flex-col justify-between p-space-md rounded-xl bg-surface-container/70 hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-secondary font-bold">90%</span>
+<span class="px-space-xs py-0.5 rounded font-label-badge text-label-badge uppercase bg-secondary/15 text-secondary">Outstanding</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mt-space-2xs">Cross-Functional Communication</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                Translating deep infra latency tradeoffs into C-suite executive language.
+              </p>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden mt-space-md">
+<div class="bg-secondary h-full rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Strengths & Development Opportunities Deep-Dive -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- What You Did Well -->
+<div class="bg-surface-container-low/95 p-space-xl rounded-xl shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-lg">verified</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">What You Executed Well</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Validated signals that meet or exceed the Staff benchmark</p>
+</div>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Strength Item 1 -->
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Architectural Decoupling Argument (Q1)</span>
+<span class="font-label-code text-label-code text-secondary">92/100</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Masterful articulation of asynchronous event buses versus tight REST RPC binding during high-concurrency peak surges.
+              </p>
+<div class="p-space-xs rounded bg-surface-container-lowest font-label-code text-label-code text-on-surface-variant italic">
+                “...by isolating payment orchestration from synchronous reporting webhooks, we preserved a 99.995% transaction throughput SLA...”
+              </div>
+</div>
+<!-- Strength Item 2 -->
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Executive Narrative Clarity (Q5)</span>
+<span class="font-label-code text-label-code text-secondary">89/100</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Skillfully translated complex backend debt into quantified customer churn risks for non-technical leadership.
+              </p>
+<div class="p-space-xs rounded bg-surface-container-lowest font-label-code text-label-code text-on-surface-variant italic">
+                “...framed the 6-week core engine rewrite not as technical hygiene, but as removing a 400ms latency friction cap that suppressed merchant conversion by 1.8%...”
+              </div>
+</div>
+</div>
+</div>
+<!-- Identified Weaknesses & Missed Opportunities -->
+<div class="bg-surface-container-low/95 p-space-xl rounded-xl shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-tertiary/15 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-lg">warning</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Identified Gaps &amp; Missed Angles</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Critical omissions flagged by senior interviewer guidelines</p>
+</div>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Gap Item 1 -->
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-tertiary font-semibold">Omitted Gross Margin Considerations (Q2)</span>
+<span class="font-label-code text-label-code text-tertiary">64/100</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                You proposed a tiered freemium API model with generous sandbox quotas, but neglected underlying AWS ingest and egress cost modeling.
+              </p>
+<div class="p-space-xs rounded bg-surface-container-lowest font-label-code text-label-code text-tertiary-fixed-dim">
+                Missing: COGS impact per 1M calls, margin compression on enterprise renegotiations, tiered throttling triggers.
+              </div>
+</div>
+<!-- Gap Item 2 -->
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-semibold">Absence of Crisis Audit Proofs (Q3)</span>
+<span class="font-label-code text-label-code text-primary">72/100</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Discussed regulatory policy frameworks theoretically without illustrating how you commanded an actual mid-cycle SOC2 or FedRAMP audit incident.
+              </p>
+<div class="p-space-xs rounded bg-surface-container-lowest font-label-code text-label-code text-on-surface-variant">
+                Missing: Incident triage runbooks, root-cause transparency memos for banking partners, remediation SLA commitments.
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. CRUCIAL BRIDGE: Connection to Your Career Analysis & Gaps -->
+<section class="flex flex-col gap-space-lg bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-2xl relative overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">hub</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-badge text-label-badge uppercase tracking-wider text-primary font-bold">Bi-Directional Bridge</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                Career Analysis &amp; Target Role Gap Connections
+              </h2>
+</div>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">
+            Cross-Referencing: Target L6 Platform PM
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+          Career Copilot connects each spoken response directly to your macro career competency graph. Below are the verified correlations between your interview weaknesses and active development items in your roadmap.
+        </p>
+<!-- Bridge Correlation Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Bridge Card 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md shadow-md hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded font-label-badge text-label-badge uppercase bg-tertiary/20 text-tertiary font-bold">
+                    Identified Gap #1
+                  </span>
+<span class="font-label-code text-label-code text-on-surface-variant">Monetization Domain</span>
+</div>
+<span class="font-label-code text-label-code text-tertiary font-bold">Score: 64/100</span>
+</div>
+<div class="flex items-center gap-space-2xs text-on-surface font-title-md text-title-md font-bold">
+<span>Platform Monetization</span>
+<span class="material-symbols-outlined text-primary text-base">sync_alt</span>
+<span class="text-tertiary font-semibold">Question 2 Outcome</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Your response relied on qualitative developer satisfaction rather than unit economics. When evaluating tiered developer pricing, you did not address gross margin per API call or payback duration on partner integration subsidies.
+              </p>
+</div>
+<!-- Direct Roadmap Action Trigger Box -->
+<div class="p-space-sm rounded-lg bg-surface-container-highest/60 flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-primary uppercase">Recommended Roadmap Action</span>
+<span class="font-label-code text-label-code text-on-surface-variant">+4.5 Readiness pts</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">
+                Add “API Pricing Model Framework &amp; Infrastructure COGS Calculator” to Active Sprint.
+              </p>
+<div class="flex items-center justify-between pt-space-2xs">
+<span class="font-label-code text-label-code text-on-surface-variant">Est. Effort: 90 mins</span>
+<button class="gap-btn flex items-center gap-1 font-label-code text-label-code text-primary hover:text-primary-fixed font-bold" type="button">
+<span>Queue Action</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bridge Card 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md shadow-md hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded font-label-badge text-label-badge uppercase bg-primary/20 text-primary font-bold">
+                    Identified Gap #2
+                  </span>
+<span class="font-label-code text-label-code text-on-surface-variant">Risk &amp; Governance</span>
+</div>
+<span class="font-label-code text-label-code text-primary font-bold">Score: 72/100</span>
+</div>
+<div class="flex items-center gap-space-2xs text-on-surface font-title-md text-title-md font-bold">
+<span>Fintech Compliance Depth</span>
+<span class="material-symbols-outlined text-primary text-base">sync_alt</span>
+<span class="text-primary font-semibold">Question 3 Outcome</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Good theoretical grasp of PCI-DSS and tokenization boundaries, but lacked an example of handling an actual audit crisis under tight regulatory disclosure deadlines.
+              </p>
+</div>
+<!-- Direct Roadmap Action Trigger Box -->
+<div class="p-space-sm rounded-lg bg-surface-container-highest/60 flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge text-primary uppercase">Recommended Roadmap Action</span>
+<span class="font-label-code text-label-code text-on-surface-variant">+3.2 Readiness pts</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">
+                Complete “High-Stakes Compliance Audit Simulation Drill (Adyen/Stripe Cases)”.
+              </p>
+<div class="flex items-center justify-between pt-space-2xs">
+<span class="font-label-code text-label-code text-on-surface-variant">Est. Effort: 45 mins</span>
+<button class="gap-btn flex items-center gap-1 font-label-code text-label-code text-primary hover:text-primary-fixed font-bold" type="button">
+<span>Queue Action</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Question-by-Question Review with Expandable Transcripts -->
+<section class="flex flex-col gap-space-md bg-surface-container-low/90 backdrop-blur-md p-space-lg md:p-space-xl rounded-xl shadow-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              Detailed Question-by-Question Evaluation
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Examine full audio replays, speech transcripts, benchmark scorecards, and AI critiques.
+            </p>
+</div>
+<button class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors self-start sm:self-auto" id="toggle-all-questions" type="button">
+<span class="material-symbols-outlined text-base">unfold_more</span>
+<span id="toggle-all-text">Expand All Questions</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm mt-space-sm" id="questions-container">
+<!-- Question 1 -->
+<div class="question-block rounded-xl bg-surface-container overflow-hidden transition-all shadow-sm">
+<button class="question-header w-full p-space-md flex items-center justify-between gap-space-sm text-left hover:bg-surface-container-high/60 transition-colors" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="font-label-code text-label-code w-7 h-7 rounded-full bg-secondary/15 text-secondary flex items-center justify-center font-bold shrink-0">01</span>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">
+                    How do you balance zero-downtime requirements with high-risk core DB schema migrations?
+                  </span>
+<span class="font-label-code text-label-code text-on-surface-variant">Strategic Platform Thinking • Duration: 4m 12s</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="hidden sm:flex items-center gap-space-2xs px-space-sm py-0.5 rounded-full bg-secondary/10 text-secondary font-label-code text-label-code font-bold">
+<span class="material-symbols-outlined text-sm">check</span>
+                  88 / 100
+                </div>
+<span class="material-symbols-outlined text-on-surface-variant expand-icon transition-transform duration-200">expand_more</span>
+</div>
+</button>
+<!-- Collapsible Body -->
+<div class="question-body hidden p-space-md bg-surface-container-low/70 flex flex-col gap-space-md">
+<!-- Audio Player Simulation -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest">
+<button class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-fixed-dim" type="button">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</button>
+<div class="flex-1 flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant">
+<span>0:45 / 4:12</span>
+<span>1.0x</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 22%"></div>
+</div>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">WAV 48kHz</span>
+</div>
+<!-- Transcript Snippet -->
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-badge text-label-badge text-on-surface-variant uppercase">Your Spoken Answer Transcript</span>
+<div class="p-space-sm rounded-lg bg-surface-container font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  “I approach this using the expand-contract pattern. Phase one involves adding new columns as nullable, followed by dual-writing through a message broker abstraction layer. Once we verify data consistency using shadow queries, we cut reads over to the new schema and lazily backfill historical rows before finally deprecating the legacy schema.”
+                </div>
+</div>
+<!-- Evaluator Critique Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-lg bg-secondary/10 flex flex-col gap-1">
+<span class="font-label-badge text-label-badge text-secondary uppercase font-bold">What Impressed Us</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Precise technical vocabulary (expand/contract, dual-write) and instant mitigation of write lock contention.</p>
+</div>
+<div class="p-space-sm rounded-lg bg-tertiary/10 flex flex-col gap-1">
+<span class="font-label-badge text-label-badge text-tertiary uppercase font-bold">What Could Improve</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Could have explicitly stated how rollback drills are automated in pre-production staging environments.</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1">
+<span class="font-label-badge text-label-badge text-primary uppercase font-bold">Benchmark Ideal</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Staff candidates also define customer-facing status page runbooks and maximum acceptable data skew thresholds.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Question 2 (Gap Question) -->
+<div class="question-block rounded-xl bg-surface-container overflow-hidden transition-all shadow-sm">
+<button class="question-header w-full p-space-md flex items-center justify-between gap-space-sm text-left hover:bg-surface-container-high/60 transition-colors" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="font-label-code text-label-code w-7 h-7 rounded-full bg-tertiary/20 text-tertiary flex items-center justify-center font-bold shrink-0">02</span>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">
+                    How would you design the pricing and quota architecture for a new enterprise Payments API?
+                  </span>
+<span class="font-label-code text-label-code text-tertiary">API Monetization &amp; Pricing • Duration: 5m 40s</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-space-2xs px-space-sm py-0.5 rounded-full bg-tertiary/15 text-tertiary font-label-code text-label-code font-bold">
+<span class="material-symbols-outlined text-sm">priority_high</span>
+                  64 / 100
+                </div>
+<span class="material-symbols-outlined text-on-surface-variant expand-icon transition-transform duration-200">expand_more</span>
+</div>
+</button>
+<!-- Collapsible Body -->
+<div class="question-body hidden p-space-md bg-surface-container-low/70 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest">
+<button class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-fixed-dim" type="button">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</button>
+<div class="flex-1 flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant">
+<span>1:12 / 5:40</span>
+<span>1.0x</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 35%"></div>
+</div>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">WAV 48kHz</span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<span class="font-label-badge text-label-badge text-on-surface-variant uppercase">Your Spoken Answer Transcript</span>
+<div class="p-space-sm rounded-lg bg-surface-container font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  “I would look at giving developers a frictionless tier with 10,000 monthly free requests to seed organic adoption. Once they hit scale, we charge a flat fee of $499/mo plus a small token fee. We would monitor developer satisfaction, latency, and documentation usage to decide when to pitch enterprise custom plans.”
+                </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-lg bg-secondary/10 flex flex-col gap-1">
+<span class="font-label-badge text-label-badge text-secondary uppercase font-bold">What Impressed Us</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Strong appreciation for developer onboarding velocity and friction reduction.</p>
+</div>
+<div class="p-space-sm rounded-lg bg-tertiary/10 flex flex-col gap-1">
+<span class="font-label-badge text-label-badge text-tertiary uppercase font-bold">What Could Improve</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complete omission of infrastructure unit costs (egress, card-network pass-through fees) which would result in negative margins.</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1">
+<span class="font-label-badge text-label-badge text-primary uppercase font-bold">Benchmark Ideal</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Models gross profit per call: e.g., Base Interchange + 10bps + $0.05 gateway fee, protected by a minimum committed contract value.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Question 3 (Gap Question) -->
+<div class="question-block rounded-xl bg-surface-container overflow-hidden transition-all shadow-sm">
+<button class="question-header w-full p-space-md flex items-center justify-between gap-space-sm text-left hover:bg-surface-container-high/60 transition-colors" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="font-label-code text-label-code w-7 h-7 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold shrink-0">03</span>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">
+                    Describe a scenario where compliance mandates threatened to break partner API contracts.
+                  </span>
+<span class="font-label-code text-label-code text-primary">Regulatory &amp; Compliance Risk • Duration: 4m 45s</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-space-2xs px-space-sm py-0.5 rounded-full bg-primary/15 text-primary font-label-code text-label-code font-bold">
+<span class="material-symbols-outlined text-sm">info</span>
+                  72 / 100
+                </div>
+<span class="material-symbols-outlined text-on-surface-variant expand-icon transition-transform duration-200">expand_more</span>
+</div>
+</button>
+<!-- Collapsible Body -->
+<div class="question-body hidden p-space-md bg-surface-container-low/70 flex flex-col gap-space-md">
+<div class="p-space-sm rounded-lg bg-surface-container font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                “When updated PCI standards required redacting raw cardholder data from our secondary webhook payloads, we worked closely with legal and InfoSec to issue deprecation notifications...”
+              </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-lg bg-secondary/10 flex flex-col gap-1">
+<span class="font-label-badge text-label-badge text-secondary uppercase font-bold">Strengths</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Solid understanding of webhook security and tokenization isolation.</p>
+</div>
+<div class="p-space-sm rounded-lg bg-tertiary/10 flex flex-col gap-1">
+<span class="font-label-badge text-label-badge text-tertiary uppercase font-bold">Weaknesses</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lacked concrete examples of partner negotiation or emergency bridge proxies.</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1">
+<span class="font-label-badge text-label-badge text-primary uppercase font-bold">Benchmark Ideal</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Deploys automated forward-compatible translation layers with cryptographic vaulting.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Question 4 -->
+<div class="question-block rounded-xl bg-surface-container overflow-hidden transition-all shadow-sm">
+<button class="question-header w-full p-space-md flex items-center justify-between gap-space-sm text-left hover:bg-surface-container-high/60 transition-colors" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="font-label-code text-label-code w-7 h-7 rounded-full bg-secondary/15 text-secondary flex items-center justify-center font-bold shrink-0">04</span>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">
+                    How do you govern third-party integration quality and bad-actor API spam?
+                  </span>
+<span class="font-label-code text-label-code text-on-surface-variant">Partner &amp; Ecosystem • Duration: 4m 02s</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-space-2xs px-space-sm py-0.5 rounded-full bg-secondary/10 text-secondary font-label-code text-label-code font-bold">
+<span class="material-symbols-outlined text-sm">check</span>
+                  82 / 100
+                </div>
+<span class="material-symbols-outlined text-on-surface-variant expand-icon transition-transform duration-200">expand_more</span>
+</div>
+</button>
+<div class="question-body hidden p-space-md bg-surface-container-low/70 flex flex-col gap-space-sm">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Well articulated leaky-bucket rate limiting, circuit breaking algorithms, and multi-tenant quota sandboxes. Recommended small additions around automated sandbox revocations.
+              </p>
+</div>
+</div>
+<!-- Question 5 -->
+<div class="question-block rounded-xl bg-surface-container overflow-hidden transition-all shadow-sm">
+<button class="question-header w-full p-space-md flex items-center justify-between gap-space-sm text-left hover:bg-surface-container-high/60 transition-colors" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="font-label-code text-label-code w-7 h-7 rounded-full bg-secondary/15 text-secondary flex items-center justify-center font-bold shrink-0">05</span>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate">
+                    Tell me about a time you had to say no to an influential commercial stakeholder for platform health.
+                  </span>
+<span class="font-label-code text-label-code text-on-surface-variant">Cross-Functional Leadership • Duration: 5m 20s</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-space-2xs px-space-sm py-0.5 rounded-full bg-secondary/10 text-secondary font-label-code text-label-code font-bold">
+<span class="material-symbols-outlined text-sm">star</span>
+                  90 / 100
+                </div>
+<span class="material-symbols-outlined text-on-surface-variant expand-icon transition-transform duration-200">expand_more</span>
+</div>
+</button>
+<div class="question-body hidden p-space-md bg-surface-container-low/70 flex flex-col gap-space-sm">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Outstanding demonstration of executive presence. Successfully mapped an engineering reliability risk directly into quarterly enterprise churn figures to achieve voluntary CRO buy-in.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Next Steps & Actionable Launchpad Footer Hero -->
+<section class="p-space-lg md:p-space-xl rounded-xl bg-gradient-to-br from-surface-container-low via-surface-container to-surface-container-low shadow-2xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-2xs max-w-2xl text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start gap-space-2xs text-secondary font-label-code text-label-code uppercase tracking-wider font-bold">
+<span class="material-symbols-outlined text-base">forward</span>
+            Continuous Progression Loop
+          </div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            Turn This Interview Into Career Trajectory Momentum
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Your evaluation highlighted 2 high-leverage knowledge gaps. Injecting these into your active development queue guarantees immediate readiness score recalibration.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col lg:flex-row items-center gap-space-sm w-full md:w-auto shrink-0">
+<button class="w-full sm:w-auto flex items-center justify-center gap-space-2xs px-space-lg py-space-md rounded-lg bg-primary text-on-primary font-title-md text-title-md font-bold hover:bg-primary-fixed-dim transition-all shadow-lg active:scale-95" id="launchpad-update-btn" type="button">
+<span class="material-symbols-outlined text-xl">sync</span>
+<span>Update My Roadmap with 2 Actions</span>
+</button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-space-2xs px-space-md py-space-md rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-title-md text-title-md font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-xl text-tertiary">replay</span>
+<span>Retake Gap Questions (2)</span>
+</button>
+</div>
+</section>
+<!-- Floating Feedback Notification Drawer (Client Micro-interaction) -->
+<div class="fixed bottom-6 right-6 hidden z-50 bg-surface-container-highest text-on-surface px-space-md py-space-sm rounded-lg shadow-2xl flex items-center gap-space-sm transition-all duration-300 transform translate-y-2" id="toast">
+<span class="material-symbols-outlined text-secondary" id="toast-icon">check_circle</span>
+<span class="font-body-sm text-body-sm font-semibold" id="toast-msg">Action processed successfully</span>
+</div>
+</div>
+</div>
+</div>
+<script src="../js/interview-report.js"></script></main><footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.3)]"><div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Career Copilot Logo" class="h-6 w-auto object-contain opacity-75" src="https://lh3.googleusercontent.com/aida/AEtjO1WulXIdmjnfBMvbSw67U99vu01KlISsdFceqF1rw7P9BIXUR_sNMlpYAr2aY7FVcz2kzeJVMwTbcWxhxjD9R8ADbkreAxwvTIcQNvoRlEeUcCwY_OQJfEtRgDnxALk7CmmQCbZ4JHby0EDQhN9RwMZInG9V_G0mMqUOMrza0adpF1E72TItNbig7I58FJ_yzkooO9CeO43BtPBfinSUkxTxEA8I1Ucx3zBngm14dlTWIXTqFpxumxwMtCOT"/><span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Career Copilot Systems. High-Stakes Career Strategy &amp; Executive Readiness.</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Role Benchmark Rubrics</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Competency Graph</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy &amp; Data Vault</a></div></div></footer></body></html>

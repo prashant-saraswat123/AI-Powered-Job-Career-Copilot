@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <title>Career Copilot</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#0f131d", "on-tertiary-container": "#3e2400", "on-secondary-container": "#00311f", "on-tertiary-fixed": "#2a1700", "on-secondary-fixed": "#002113", "on-surface-variant": "#c5c5d7", "primary-fixed-dim": "#bdc2ff", "inverse-surface": "#dfe2f1", "tertiary-fixed": "#ffddb8", "surface-tint": "#bdc2ff", "error-container": "#93000a", "on-primary-fixed": "#000865", "surface": "#0f131d", "outline": "#8f8fa0", "on-tertiary": "#472a00", "on-secondary": "#003824", "on-primary-container": "#00108d", "secondary-fixed-dim": "#4edea3", "on-primary-fixed-variant": "#1d2fc3", "outline-variant": "#454655", "primary": "#bdc2ff", "surface-container-lowest": "#0a0e18", "secondary-container": "#00a572", "inverse-on-surface": "#2c303b", "tertiary-container": "#ca8100", "secondary": "#4edea3", "error": "#ffb4ab", "tertiary-fixed-dim": "#ffb95f", "surface-container-high": "#262a35", "on-primary": "#00139f", "on-background": "#dfe2f1", "surface-container-low": "#171b26", "surface-dim": "#0f131d", "inverse-primary": "#3c4cdb", "on-error": "#690005", "on-tertiary-fixed-variant": "#653e00", "on-surface": "#dfe2f1", "on-secondary-fixed-variant": "#005236", "surface-container-highest": "#313540", "primary-fixed": "#dfe0ff", "primary-container": "#7886ff", "tertiary": "#ffb95f", "on-error-container": "#ffdad6", "surface-bright": "#353944", "secondary-fixed": "#6ffbbe", "surface-variant": "#313540", "surface-container": "#1c1f2a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2rem", "space-2xl": "3rem", "margin": "2rem", "space-2xs": "0.25rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-sm": "0.75rem", "space-md": "1rem", "space-xs": "0.5rem", "gutter": "1.5rem", "space-lg": "1.5rem" }, "fontFamily": { "body-md": ["Manrope"], "body-lg": ["Manrope"], "headline-lg-mobile": ["Plus Jakarta Sans"], "title-md": ["Manrope"], "label-badge": ["Manrope"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Manrope"], "display-hero-mobile": ["Plus Jakarta Sans"], "label-code": ["JetBrains Mono"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-code": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script>
+</head>
+
+<body class="bg-background font-body-md text-on-surface antialiased min-h-screen">
+    <header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.45)]">
+        <div
+            class="h-28 w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col justify-between pt-space-xs pb-space-xs">
+            <div class="flex items-center justify-between h-14">
+                <div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" href="../index.html"><img
+                            alt="Career Copilot Logo" class="h-8 w-auto object-contain"
+                            src="https://lh3.googleusercontent.com/aida/AEtjO1WulXIdmjnfBMvbSw67U99vu01KlISsdFceqF1rw7P9BIXUR_sNMlpYAr2aY7FVcz2kzeJVMwTbcWxhxjD9R8ADbkreAxwvTIcQNvoRlEeUcCwY_OQJfEtRgDnxALk7CmmQCbZ4JHby0EDQhN9RwMZInG9V_G0mMqUOMrza0adpF1E72TItNbig7I58FJ_yzkooO9CeO43BtPBfinSUkxTxEA8I1Ucx3zBngm14dlTWIXTqFpxumxwMtCOT" /><span
+                            class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Career
+                            Copilot</span></a>
+                    <div
+                        class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-high">
+                        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span
+                            class="font-label-code text-label-code text-on-surface uppercase tracking-wider font-semibold">Target:
+                            Senior Product Manager @ Stripe</span></div>
+                </div>
+                <div class="flex items-center gap-space-md">
+                    <div
+                        class="hidden md:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container">
+                        <span class="font-label-badge text-label-badge uppercase text-secondary font-bold">Copilot
+                            v2.4</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span
+                            class="font-body-sm text-body-sm text-on-surface-variant">Active Analysis</span></div>
+                    <div class="flex items-center gap-space-sm pl-space-xs">
+                        <div class="relative flex items-center"><img alt="Profile"
+                                class="w-8 h-8 rounded-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCajukYYkSdWPP7DxDjjLUTkqwfn-juAWcWCxKvJbtl2Msm9fH6BbLgchnHj5Fl2kStYGCyTAtehBKLVylzNi8WaArSVSgr37fuC78xx52uZdl8QxBz81i_y_MY6VkPWMEgjvPOt05agdcR7L6CG1q8HQ7ZELYzko9xVmEno_qPHlG6_jXrhjMTsjQe4omxp4UiDWDGafRdKHtFaj63HEb-BQrd4_i0yRZJydXJ-5GNlN9gC5CVmX8ZA" /><span
+                                class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span>
+                        </div>
+                        <div class="hidden sm:flex flex-col text-left"><span
+                                class="font-body-sm text-body-sm font-semibold text-on-surface">Alex Mercer</span><span
+                                class="font-body-sm text-body-sm text-on-surface-variant">Executive Member</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between h-11">
+                <nav class="flex items-center gap-space-xs overflow-x-auto py-space-2xs"
+                    data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a
+                        class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap"
+                        data-path="setup-intake" href="#">Setup &amp; Intake</a><a aria-current="page"
+                        class="px-space-md py-space-2xs transition-colors whitespace-nowrap bg-primary-container text-on-primary-container font-semibold rounded-lg"
+                        data-path="career-analysis" href="#">Career Analysis</a><a
+                        class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap"
+                        data-path="action-roadmap" href="#">Action Roadmap</a><a
+                        class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap"
+                        data-path="interview-studio" href="#">Interview Studio</a><a
+                        class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap"
+                        data-path="profile-context" href="#">Profile &amp; Context</a></nav>
+                <div class="hidden lg:flex items-center gap-space-sm">
+                    <div
+                        class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low">
+                        <span class="font-label-code text-label-code text-secondary font-bold">72% READINESS</span><span
+                            class="text-outline-variant">•</span><span
+                            class="font-label-code text-label-code text-tertiary font-bold">3 GAPS</span></div><button
+                        class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors"
+                        type="button"><span class="material-symbols-outlined text-base">bolt</span><span>Copilot
+                            Prompt</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-28 bg-background min-h-[calc(100vh-140px)]">
+        <div class="flex flex-col w-full">
+        <!-- Empty State: Displayed when opened without an active analysis in sessionStorage -->
+        <div id="analysis-empty-state" class="hidden w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin py-space-2xl text-center">
+            <div class="p-space-2xl rounded-xl bg-surface-container-low border border-outline-variant/30 flex flex-col items-center justify-center max-w-xl mx-auto shadow-xl">
+                <span class="material-symbols-outlined text-5xl text-outline mb-space-sm">find_in_page</span>
+                <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs">No Active Analysis Session</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+                    No candidate analysis results were found in your current browser session. Please start by submitting your resume and a target job description.
+                </p>
+                <a href="../index.html" class="px-space-xl py-space-md rounded-lg bg-primary text-on-primary font-title-md font-semibold flex items-center gap-space-xs shadow-lg hover:bg-primary-fixed-dim transition-all">
+                    <span class="material-symbols-outlined text-xl">upload_file</span>
+                    <span>Start New Analysis</span>
+                </a>
+            </div>
+        </div>
+
+        <div id="analysis-content-container" class="flex flex-col w-full">
+            <div
+                class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin pt-space-md pb-space-2xl flex flex-col gap-space-xl">
+                <!-- Top Contextual Briefing Banner -->
+                <section
+                    class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md md:p-space-lg shadow-xl">
+                    <div
+                        class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute -left-20 -bottom-20 w-72 h-72 rounded-full bg-secondary/5 blur-3xl pointer-events-none">
+                    </div>
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+                        <div class="flex flex-col gap-space-xs max-w-3xl">
+                            <div class="flex flex-wrap items-center gap-space-xs">
+                                <span
+                                    class="px-space-xs py-space-2xs rounded-full bg-primary-container/20 text-primary font-label-code text-label-code uppercase tracking-wider font-semibold">
+                                    Live Evaluation
+                                </span>
+                                <span class="text-outline-variant font-label-code text-label-code">/</span>
+                                <span
+                                    class="font-label-code text-label-code text-on-surface-variant flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm text-secondary">verified</span>
+                                    Elena_Vance_Resume.pdf
+                                </span>
+                                <span class="text-outline-variant font-label-code text-label-code">vs</span>
+                                <span class="font-label-code text-label-code text-on-surface">Stripe JD #ST-9942</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline gap-space-xs sm:gap-space-sm mt-1">
+                                <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+                                    Lead Product Manager — Platform Ecosystems
+                                </h1>
+                                <span class="font-title-md text-title-md text-primary font-medium">@ Stripe Global
+                                    Fintech</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-space-xs">
+                                <span class="material-symbols-outlined text-base text-outline">schedule</span>
+                                <span>Synthesized 14 minutes ago • Calibrated against 42 verified Lead PM benchmarks in
+                                    FinTech Infrastructure</span>
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-space-sm">
+                            <button
+                                class="px-space-md py-space-sm rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-all flex items-center gap-space-xs shadow-sm"
+                                type="button">
+                                <span
+                                    class="material-symbols-outlined text-base text-on-surface-variant">swap_horiz</span>
+                                <span>Switch Target Job</span>
+                            </button>
+                            <button
+                                class="px-space-sm py-space-sm rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-all flex items-center justify-center"
+                                type="button">
+                                <span class="material-symbols-outlined text-base">share</span>
+                            </button>
+                            <button
+                                class="px-space-md py-space-sm rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold transition-all hover:bg-primary-fixed-dim flex items-center gap-space-xs shadow-md"
+                                type="button">
+                                <span class="material-symbols-outlined text-base">download</span>
+                                <span>Export Executive Dossier</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- Executive Summary Metrics Matrix -->
+                <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+                    <!-- Metric 1: Readiness Score Gauge -->
+                    <div
+                        class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container-high transition-all">
+                        <div class="flex items-start justify-between">
+                            <div class="flex flex-col">
+                                <span
+                                    class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant font-bold">Overall
+                                    Match Index</span>
+                                <span class="font-headline-lg text-headline-lg font-bold text-on-surface mt-1">72<span
+                                        class="text-primary text-headline-sm font-medium">%</span></span>
+                            </div>
+                            <div class="relative w-14 h-14 flex items-center justify-center">
+                                <svg class="w-14 h-14 -rotate-90" viewbox="0 0 48 48">
+                                    <circle class="text-surface-container-highest fill-none" cx="24" cy="24" r="20"
+                                        stroke="currentColor" stroke-width="4"></circle>
+                                    <circle class="text-secondary fill-none" cx="24" cy="24" r="20"
+                                        stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="35.1"
+                                        stroke-linecap="round" stroke-width="4"></circle>
+                                </svg>
+                                <span
+                                    class="material-symbols-outlined absolute text-secondary text-lg">verified_user</span>
+                            </div>
+                        </div>
+                        <div class="mt-space-md pt-space-xs">
+                            <div
+                                class="inline-flex items-center gap-1.5 px-space-xs py-space-2xs rounded-full bg-secondary/10 text-secondary font-label-code text-label-code font-bold">
+                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                Strong Foundation
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">3 strategic focus gaps
+                                impede instant candidate shortlist tier.</p>
+                        </div>
+                    </div>
+                    <!-- Metric 2: Verified Strengths -->
+                    <div
+                        class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col justify-between group hover:bg-surface-container-high transition-all">
+                        <div class="flex items-start justify-between">
+                            <div class="flex flex-col">
+                                <span
+                                    class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant font-bold">Evidenced
+                                    Competencies</span>
+                                <span class="font-headline-lg text-headline-lg font-bold text-secondary mt-1">8 <span
+                                        class="text-on-surface-variant text-headline-sm font-normal">/ 11</span></span>
+                            </div>
+                            <div
+                                class="w-11 h-11 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
+                                <span class="material-symbols-outlined text-xl">workspace_premium</span>
+                            </div>
+                        </div>
+                        <div class="mt-space-md">
+                            <div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+                                <div class="bg-secondary h-1.5 rounded-full" style="width: 73%"></div>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Core strengths in
+                                Cross-Functional Leadership &amp; Product Roadmapping.</p>
+                        </div>
+                    </div>
+                    <!-- Metric 3: Priority Gaps -->
+                    <div
+                        class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col justify-between group hover:bg-surface-container-high transition-all">
+                        <div class="flex items-start justify-between">
+                            <div class="flex flex-col">
+                                <span
+                                    class="font-label-badge text-label-badge uppercase tracking-wider text-tertiary font-bold">Critical
+                                    Growth Gaps</span>
+                                <span class="font-headline-lg text-headline-lg font-bold text-tertiary mt-1">3 <span
+                                        class="text-on-surface-variant text-body-md font-normal">Actionable</span></span>
+                            </div>
+                            <div
+                                class="w-11 h-11 rounded-lg bg-tertiary/10 text-tertiary flex items-center justify-center">
+                                <span class="material-symbols-outlined text-xl">crisis_alert</span>
+                            </div>
+                        </div>
+                        <div class="mt-space-md">
+                            <div class="flex items-center gap-1.5">
+                                <span
+                                    class="px-space-xs py-space-2xs rounded bg-tertiary/20 text-tertiary font-label-code text-label-code font-bold">1
+                                    High Priority</span>
+                                <span
+                                    class="px-space-xs py-space-2xs rounded bg-surface-container-highest text-on-surface-variant font-label-code text-label-code">2
+                                    Medium</span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">API governance &amp;
+                                European FinTech regulatory compliance need depth.</p>
+                        </div>
+                    </div>
+                    <!-- Metric 4: Resume Optimization Yield -->
+                    <div
+                        class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col justify-between group hover:bg-surface-container-high transition-all">
+                        <div class="flex items-start justify-between">
+                            <div class="flex flex-col">
+                                <span
+                                    class="font-label-badge text-label-badge uppercase tracking-wider text-primary font-bold">Resume
+                                    Enhancements</span>
+                                <span class="font-headline-lg text-headline-lg font-bold text-primary mt-1">4 <span
+                                        class="text-on-surface-variant text-body-md font-normal">Impact
+                                        Tweaks</span></span>
+                            </div>
+                            <div
+                                class="w-11 h-11 rounded-lg bg-primary-container/20 text-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined text-xl">auto_fix_high</span>
+                            </div>
+                        </div>
+                        <div class="mt-space-md">
+                            <div
+                                class="flex items-center justify-between text-on-surface-variant font-label-code text-label-code mb-1">
+                                <span>ATS Semantic Match</span>
+                                <span class="text-on-surface font-semibold">84%</span>
+                            </div>
+                            <div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+                                <div class="bg-primary h-1.5 rounded-full" style="width: 84%"></div>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Quantifiable volume impact
+                                metrics missing in previous 2 roles.</p>
+                        </div>
+                    </div>
+                </section>
+                <!-- 'What Would You Like to Do Next?' Hub -->
+                <section class="flex flex-col gap-space-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+                        <div>
+                            <span
+                                class="font-label-code text-label-code text-primary uppercase font-bold tracking-wider">Strategic
+                                Next Actions</span>
+                            <h2 class="font-headline-md text-headline-md text-on-surface font-bold">What would you like
+                                to do next?</h2>
+                        </div>
+                        <span class="font-body-sm text-body-sm text-on-surface-variant">Recommended: Complete the 4-week
+                            roadmap to bridge Stripe competency standards</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md mt-1">
+                        <!-- Action Card 1 (Hero Action) -->
+                        <div
+                            class="rounded-xl bg-gradient-to-b from-primary-container/20 to-surface-container p-space-lg shadow-lg flex flex-col justify-between relative group cursor-pointer hover:shadow-xl transition-all transform hover:-translate-y-1">
+                            <div class="absolute top-space-sm right-space-sm">
+                                <span
+                                    class="px-space-xs py-space-2xs rounded-full bg-primary text-on-primary font-label-badge text-label-badge font-bold uppercase tracking-wider">Recommended</span>
+                            </div>
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center mb-space-md shadow-md">
+                                    <span class="material-symbols-outlined text-2xl">route</span>
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs group-hover:text-primary transition-colors">
+                                    Build My Personalized Roadmap
+                                </h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Convert identified gaps into an actionable 4-week step-by-step preparation plan
+                                    targeting Stripe's L6 criteria.
+                                </p>
+                            </div>
+                            <div
+                                class="pt-space-md mt-space-md flex items-center justify-between text-primary font-body-sm text-body-sm font-bold">
+                                <span>Generate 4-Week Plan</span>
+                                <span
+                                    class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+                            </div>
+                        </div>
+                        <!-- Action Card 2 -->
+                        <div
+                            class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col justify-between group cursor-pointer hover:bg-surface-container-high transition-all transform hover:-translate-y-1">
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-surface-container-highest text-secondary flex items-center justify-center mb-space-md">
+                                    <span class="material-symbols-outlined text-2xl">record_voice_over</span>
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs group-hover:text-secondary transition-colors">
+                                    Practice Role-Specific Interview
+                                </h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Simulate 5 contextual questions targeting your 3 specific gap areas with instant
+                                    behavioral rubric feedback.
+                                </p>
+                            </div>
+                            <div
+                                class="pt-space-md mt-space-md flex items-center justify-between text-secondary font-body-sm text-body-sm font-bold">
+                                <span>Launch Simulation</span>
+                                <span
+                                    class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+                            </div>
+                        </div>
+                        <!-- Action Card 3 -->
+                        <div
+                            class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col justify-between group cursor-pointer hover:bg-surface-container-high transition-all transform hover:-translate-y-1">
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-surface-container-highest text-primary font-bold flex items-center justify-center mb-space-md">
+                                    <span class="material-symbols-outlined text-2xl">description</span>
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs group-hover:text-primary transition-colors">
+                                    Improve Resume Evidence
+                                </h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Surface 4 missing high-impact keywords and re-architect passive achievement bullets
+                                    into quantifiable outcome statements.
+                                </p>
+                            </div>
+                            <div
+                                class="pt-space-md mt-space-md flex items-center justify-between text-primary font-body-sm text-body-sm font-bold">
+                                <span>Audit &amp; Rewrite</span>
+                                <span
+                                    class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+                            </div>
+                        </div>
+                        <!-- Action Card 4 -->
+                        <div class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col justify-between group cursor-pointer hover:bg-surface-container-high transition-all transform hover:-translate-y-1"
+                            onclick="document.getElementById('gap-drawer').scrollIntoView({behavior: 'smooth'})">
+                            <div>
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-surface-container-highest text-tertiary flex items-center justify-center mb-space-md">
+                                    <span class="material-symbols-outlined text-2xl">analytics</span>
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-xs group-hover:text-tertiary transition-colors">
+                                    Deep-Dive Gap Explorer
+                                </h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Examine root causes, role expectations, and step-by-step strategies for your top
+                                    priority technical gaps.
+                                </p>
+                            </div>
+                            <div
+                                class="pt-space-md mt-space-md flex items-center justify-between text-tertiary font-body-sm text-body-sm font-bold">
+                                <span>Explore Gap Root Causes</span>
+                                <span
+                                    class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Two-Column Strategic Deep Breakdown -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+                    <!-- LEFT COLUMN: Strengths vs Gaps (7 Cols) -->
+                    <section class="lg:col-span-7 flex flex-col gap-space-lg">
+                                                <!-- Priority Gaps Section -->
+                        <div class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col gap-space-md">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+                                    <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Priority
+                                        Gaps &amp; Growth Areas</h3>
+                                </div>
+                                <span
+                                    class="font-label-code text-label-code px-space-xs py-space-2xs rounded bg-surface-container-highest text-tertiary font-bold" id="analysis-gaps-count-badge">
+                                    0 Requires Attention
+                                </span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant -mt-2">
+                                Specific requirements from the target job description where evidence was not found in the resume.
+                            </p>
+                            <div id="analysis-gaps-list" class="flex flex-col gap-space-sm">
+                            </div>
+                        </div>
+                                                <!-- Evidenced Strengths Section -->
+                        <div class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col gap-space-md">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                                    <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Your
+                                        Evidenced Strengths</h3>
+                                </div>
+                                <span
+                                    class="font-label-code text-label-code px-space-xs py-space-2xs rounded bg-surface-container-highest text-secondary font-bold" id="analysis-strengths-count-badge">
+                                    0 Verified Matches
+                                </span>
+                            </div>
+                            <div id="analysis-strengths-list" class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                            </div>
+                        </div>
+                    </section>
+                                        <!-- RIGHT COLUMN: Extracted Profile Data from Backend (5 Cols) -->
+                    <section class="lg:col-span-5 flex flex-col gap-space-lg">
+                        <!-- Extracted Skills Container -->
+                        <div class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col gap-space-md">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Extracted Skills</h3>
+                                <span class="font-label-code text-label-code text-secondary font-semibold">From Resume</span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant -mt-2">Skills extracted directly from candidate document text.</p>
+                            <div id="analysis-candidate-skills" class="flex flex-wrap gap-space-xs"></div>
+                        </div>
+
+                        <!-- Extracted Projects Container -->
+                        <div class="rounded-xl bg-surface-container p-space-lg shadow-md flex flex-col gap-space-md">
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Experience & Projects</h3>
+                                <span class="font-label-code text-label-code text-primary font-semibold">Verified Signals</span>
+                            </div>
+                            <div id="analysis-candidate-projects" class="flex flex-col gap-space-sm"></div>
+                        </div></section>
+                </div>
+                <!-- Embedded In-Depth Gap Exploration Drawer / Modal Preview -->
+                <section class="rounded-xl bg-surface-container-low p-space-lg shadow-xl relative overflow-hidden"
+                    id="gap-drawer">
+                    <div
+                        class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm pb-space-md border-b border-surface-container-highest">
+                        <div class="flex items-center gap-space-sm">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-tertiary/20 text-tertiary flex items-center justify-center">
+                                <span class="material-symbols-outlined text-2xl">troubleshoot</span>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-space-xs">
+                                    <span
+                                        class="font-label-code text-label-code text-tertiary font-bold uppercase">Deep-Dive
+                                        Inspection</span>
+                                    <span class="text-outline-variant font-label-code text-label-code">•</span>
+                                    <span class="font-label-code text-label-code text-on-surface-variant">Gap ID:
+                                        GAP-STRIPE-01</span>
+                                </div>
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Platform Metrics
+                                    &amp; API Ecosystem Monetization</h3>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-space-xs">
+                            <button
+                                class="px-space-sm py-space-xs rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm hover:bg-surface-bright transition-colors flex items-center gap-1"
+                                type="button">
+                                <span class="material-symbols-outlined text-base">bookmark</span>
+                                <span>Save to Notebook</span>
+                            </button>
+                            <button
+                                class="px-space-md py-space-xs rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold hover:bg-primary-fixed-dim transition-colors flex items-center gap-1 shadow-sm"
+                                type="button">
+                                <span class="material-symbols-outlined text-base">bolt</span>
+                                <span>Trigger Copilot Remediation Plan</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg pt-space-lg">
+                        <!-- Col 1: Current vs Expected -->
+                        <div class="flex flex-col gap-space-sm">
+                            <span
+                                class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant font-bold">1.
+                                Current Status vs Expectation</span>
+                            <div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-xs">
+                                <span class="font-label-code text-label-code text-secondary font-bold">Candidate
+                                    Observed Evidence</span>
+                                <p class="font-body-sm text-body-sm text-on-surface">
+                                    Strong track record in user retention, web portal UI flows, and conversion metrics
+                                    at mid-sized SaaS.
+                                </p>
+                            </div>
+                            <div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-xs">
+                                <span class="font-label-code text-label-code text-tertiary font-bold">Stripe Target Role
+                                    Benchmark</span>
+                                <p class="font-body-sm text-body-sm text-on-surface">
+                                    Requires building self-serve developer billing tiers, API rate limiting monetization
+                                    curves, and SDK distribution telemetry.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Col 2: Why it matters -->
+                        <div class="flex flex-col gap-space-sm">
+                            <span
+                                class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant font-bold">2.
+                                Why It Matters in the Loop</span>
+                            <div
+                                class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-xs h-full justify-between">
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    Stripe interviewers in the <strong class="text-on-surface font-semibold">"API &amp;
+                                        System Design"</strong> round rigorously probe candidates on balancing dev
+                                    experience friction against transaction take-rates. A candidate unable to talk about
+                                    metering mechanisms typically fails the technical PM bar.
+                                </p>
+                                <div
+                                    class="p-space-xs rounded bg-surface-container-highest/60 flex items-center gap-2 mt-space-sm">
+                                    <span class="material-symbols-outlined text-primary text-base">lightbulb</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface">Critical for passing Round
+                                        3: Product Architecture.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Col 3: Suggested Closing Plan -->
+                        <div class="flex flex-col gap-space-sm">
+                            <span
+                                class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant font-bold">3.
+                                Suggested Closing Action Plan</span>
+                            <div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-sm">
+                                <div class="flex items-start gap-space-xs">
+                                    <span
+                                        class="w-5 h-5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                                    <div class="flex flex-col">
+                                        <span class="font-body-sm text-body-sm font-semibold text-on-surface">Reposition
+                                            Experience in Core SaaS</span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Reframe your
+                                            internal webhook infrastructure as an external partner API ecosystem.</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-space-xs">
+                                    <span
+                                        class="w-5 h-5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                                    <div class="flex flex-col">
+                                        <span class="font-body-sm text-body-sm font-semibold text-on-surface">Complete
+                                            Case Drill #4</span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Run the
+                                            interactive simulation: "Pricing Stripe's New Webhook Delivery SLA for
+                                            High-Volume Merchants".</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-space-xs">
+                                    <span
+                                        class="w-5 h-5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-body-sm text-body-sm font-semibold text-on-surface">Incorporate
+                                            Metrics Formula</span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Integrate Net
+                                            Dollar Retention (NDR) from developer tier migrations into your resume
+                                            portfolio.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.3)]">
+        <div
+            class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col md:flex-row items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-sm"><img alt="Career Copilot Logo"
+                    class="h-6 w-auto object-contain opacity-75"
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1WulXIdmjnfBMvbSw67U99vu01KlISsdFceqF1rw7P9BIXUR_sNMlpYAr2aY7FVcz2kzeJVMwTbcWxhxjD9R8ADbkreAxwvTIcQNvoRlEeUcCwY_OQJfEtRgDnxALk7CmmQCbZ4JHby0EDQhN9RwMZInG9V_G0mMqUOMrza0adpF1E72TItNbig7I58FJ_yzkooO9CeO43BtPBfinSUkxTxEA8I1Ucx3zBngm14dlTWIXTqFpxumxwMtCOT" /><span
+                    class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Career Copilot Systems. High-Stakes
+                    Career Strategy &amp; Executive Readiness.</span></div>
+            <div class="flex items-center gap-space-lg"><a
+                    class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                    href="#">Role Benchmark Rubrics</a><a
+                    class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                    href="#">Competency Graph</a><a
+                    class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                    href="#">Privacy &amp; Data Vault</a></div>
+        </div>
+    </footer>
+<script src="../js/analysis.js"></script>
+</body>
+
+</html>
