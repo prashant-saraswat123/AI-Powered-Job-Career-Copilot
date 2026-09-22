@@ -1,11 +1,15 @@
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
-from typing import Optional
 
 from app.services.document_parser import extract_text
-from app.ai.mock_ai import MockAIService
+from app.ai.foundry_ai import FoundryAIService
 from app.services.analysis_service import analyze_candidate
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(
     title="CareerForge AI",
@@ -13,23 +17,19 @@ app = FastAPI(
     version="0.1.0"
 )
 
-# Configure CORS for local frontend development
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5500",
         "http://127.0.0.1:5500",
-        "http://localhost:8000",
-        "http://127.0.0.1:8000",
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
+        "http://localhost:5500",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-ai_service = MockAIService()
+ai_service = FoundryAIService()
+
 
 @app.get("/")
 async def root():
@@ -152,17 +152,11 @@ async def analyze_job(file: UploadFile = File(...)):
 @app.post("/api/analyze")
 async def analyze(
     resume: UploadFile = File(...),
-    job_description: Optional[UploadFile] = File(None),
-    job_description_text: Optional[str] = Form(None)
+    job_description: str = Form(...)
 ):
-    # Validate resume
-    if not resume or not resume.filename:
-        raise HTTPException(
-            status_code=400,
-            detail="A resume file is required."
-        )
 
     allowed_extensions = {".pdf", ".docx"}
+
     resume_extension = Path(resume.filename).suffix.lower()
 
     if resume_extension not in allowed_extensions:
@@ -171,54 +165,33 @@ async def analyze(
             detail="Resume must be a PDF or DOCX file."
         )
 
-    # Validate job description input (file or text)
-    has_jd_file = isinstance(job_description, UploadFile) and bool(job_description.filename)
-    has_jd_text = isinstance(job_description_text, str) and bool(job_description_text.strip())
-
-    if not has_jd_file and not has_jd_text:
+    if not job_description.strip():
         raise HTTPException(
             status_code=400,
-            detail="Job description is required. Please provide either a PDF/DOCX file or text."
+            detail="Job description cannot be empty."
         )
 
-    upload_dir = Path("uploads")
-    upload_dir.mkdir(parents=True, exist_ok=True)
+    resume_path = Path("uploads") / resume.filename
 
-    resume_path = upload_dir / resume.filename
     resume_contents = await resume.read()
 
     with open(resume_path, "wb") as f:
         f.write(resume_contents)
 
     try:
-        resume_text = extract_text(str(resume_path))
 
-        if has_jd_text:
-            job_text = job_description_text.strip()
-        else:
-            jd_extension = Path(job_description.filename).suffix.lower()
-            if jd_extension not in allowed_extensions:
-                raise HTTPException(
-                    status_code=400,
-                    detail="Job description file must be a PDF or DOCX file."
-                )
-            job_path = upload_dir / job_description.filename
-            job_contents = await job_description.read()
-            with open(job_path, "wb") as f:
-                f.write(job_contents)
-            job_text = extract_text(str(job_path))
+        resume_text = extract_text(str(resume_path))
 
         result = await analyze_candidate(
             resume_text=resume_text,
-            job_text=job_text,
+            job_text=job_description,
             ai_service=ai_service,
         )
 
         return result
 
-    except HTTPException:
-        raise
     except Exception as e:
+
         raise HTTPException(
             status_code=500,
             detail=f"Analysis failed: {str(e)}"

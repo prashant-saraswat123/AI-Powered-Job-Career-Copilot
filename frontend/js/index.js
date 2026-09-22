@@ -1,191 +1,527 @@
-// frontend/js/index.js
-// CareerForge AI — Index / Setup & Intake Page Controller
+document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener('DOMContentLoaded', () => {
-  const resumeFileInput = document.getElementById('resume-file-input');
-  const replaceBtn = document.getElementById('replace-resume-btn');
-  const deleteBtn = document.getElementById('delete-resume-btn');
-  const dropZone = document.getElementById('resume-drop-zone');
-  const activeFilename = document.getElementById('active-filename');
-  const resumeDetails = document.getElementById('resume-details');
-  const targetJd = document.getElementById('target-jd');
-  const jdCount = document.getElementById('jd-count');
-  const runBtn = document.getElementById('run-analysis-btn');
-  const simulatorStatus = document.getElementById('simulator-status');
-  const validationError = document.getElementById('intake-error-message');
+  const targetTitle = document.getElementById("target-title");
+  const targetCompany = document.getElementById("target-company");
+  const targetIndustry = document.getElementById("target-industry");
+  const targetJd = document.getElementById("target-jd");
+  const targetContext =
+    document.getElementById("target-context");
 
-  let currentResumeFile = null;
+  const resumeSize =
+    document.getElementById("resume-size");
 
-  // Update Character Counter
-  if (targetJd && jdCount) {
-    targetJd.addEventListener('input', () => {
-      jdCount.innerText = targetJd.value.length.toLocaleString();
-      validateInputs();
-    });
+  const resumeInput = document.getElementById("resume-file");
+  const runAnalysisButton =
+    document.getElementById("run-analysis-btn");
+
+  const filenameDisplay =
+    document.getElementById("active-filename");
+
+  const jdCount =
+    document.getElementById("jd-count");
+
+  const status =
+    document.getElementById("simulator-status");
+
+  const stage3Description =
+    document.getElementById("stage-3-desc");
+
+  const stage3Bar =
+    document.getElementById("stage-3-bar");
+
+  const stage4 =
+    document.getElementById("stage-4");
+
+  updateTargetContext();
+  /*
+   * --------------------------------
+   * JD character counter
+   * --------------------------------
+   */
+
+  function updateJdCounter() {
+    if (!targetJd || !jdCount) return;
+
+    jdCount.textContent =
+      targetJd.value.length.toLocaleString();
   }
 
-  // Trigger hidden file input
-  if (replaceBtn && resumeFileInput) {
-    replaceBtn.addEventListener('click', () => resumeFileInput.click());
+
+  targetJd?.addEventListener(
+    "input",
+    updateJdCounter
+  );
+
+
+  /*
+   * --------------------------------
+   * Resume selection
+   * --------------------------------
+   */
+
+  resumeInput?.addEventListener("change", () => {
+
+    const file = resumeInput.files?.[0];
+
+    if (!file) return;
+
+    if (filenameDisplay) {
+      filenameDisplay.textContent = file.name;
+    }
+    if (resumeSize) {
+
+      const sizeInMB =
+        file.size / (1024 * 1024);
+
+      resumeSize.textContent =
+        `${sizeInMB.toFixed(2)} MB`;
+    }
+
+    /*
+     * Keep the selected file available
+     * during this page session.
+     *
+     * We deliberately do NOT try to put
+     * File objects into sessionStorage.
+     */
+    window.CareerForgeCurrentResume = file;
+  });
+
+
+  /*
+   * --------------------------------
+   * Validation
+   * --------------------------------
+   */
+
+  function validateInput() {
+
+    const errors = [];
+
+    const resumeFile =
+      window.CareerForgeCurrentResume ||
+      resumeInput?.files?.[0];
+
+    if (!resumeFile) {
+      errors.push("Please upload your resume.");
+    }
+
+    if (!targetTitle?.value.trim()) {
+      errors.push("Please enter your target job title.");
+    }
+
+    if (!targetJd?.value.trim()) {
+      errors.push("Please provide the job description.");
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors
+    };
   }
 
-  if (dropZone && resumeFileInput) {
-    dropZone.addEventListener('click', () => resumeFileInput.click());
 
-    // Drag & drop support
-    dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropZone.classList.add('border-primary', 'bg-surface-container-high');
-    });
+  /*
+   * --------------------------------
+   * UI state
+   * --------------------------------
+   */
 
-    dropZone.addEventListener('dragleave', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('border-primary', 'bg-surface-container-high');
-    });
+  function setAnalysisLoading() {
 
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('border-primary', 'bg-surface-container-high');
-      if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-        handleFileSelect(e.dataTransfer.files[0]);
+    runAnalysisButton.disabled = true;
+
+    runAnalysisButton.classList.add(
+      "opacity-75",
+      "cursor-not-allowed"
+    );
+
+    runAnalysisButton.innerHTML = `
+            <span class="material-symbols-outlined text-2xl animate-spin">
+                sync
+            </span>
+            <span>Analyzing...</span>
+        `;
+
+    if (status) {
+      status.textContent =
+        "ANALYZING CAREER FIT...";
+    }
+
+    if (stage3Description) {
+      stage3Description.textContent =
+        "Cross-referencing candidate evidence...";
+    }
+
+    if (stage3Bar) {
+      stage3Bar.style.width = "35%";
+    }
+  }
+
+
+  function setAnalysisError(message) {
+
+    runAnalysisButton.disabled = false;
+
+    runAnalysisButton.classList.remove(
+      "opacity-75",
+      "cursor-not-allowed"
+    );
+
+    runAnalysisButton.innerHTML = `
+            <span class="material-symbols-outlined text-2xl">
+                refresh
+            </span>
+            <span>Try Analysis Again</span>
+        `;
+
+    if (status) {
+      status.textContent =
+        "ANALYSIS FAILED";
+    }
+
+    if (stage3Description) {
+      stage3Description.textContent =
+        message;
+    }
+
+    if (stage3Bar) {
+      stage3Bar.style.width = "0%";
+    }
+  }
+
+
+  function setAnalysisSuccess() {
+
+    if (status) {
+      status.textContent =
+        "ANALYSIS COMPLETE";
+    }
+
+    if (stage3Description) {
+      stage3Description.textContent =
+        "Evidence synthesis complete.";
+    }
+
+    if (stage3Bar) {
+      stage3Bar.style.width = "100%";
+    }
+
+    if (stage4) {
+      stage4.classList.remove(
+        "opacity-60",
+        "bg-surface-container-lowest"
+      );
+
+      stage4.classList.add(
+        "bg-surface-container-high"
+      );
+    }
+  }
+
+
+  /*
+   * --------------------------------
+   * Main analysis action
+   * --------------------------------
+   */
+
+  // async function runAnalysis() {
+
+  //   const validation =
+  //     validateInput();
+
+  //   if (!validation.valid) {
+
+  //     setAnalysisError(
+  //       validation.errors.join(" ")
+  //     );
+
+  //     return;
+  //   }
+
+
+  //   const resumeFile =
+  //     window.CareerForgeCurrentResume ||
+  //     resumeInput.files[0];
+
+  //   const role =
+  //     targetTitle.value.trim();
+
+  //   const company =
+  //     targetCompany?.value.trim() || "";
+
+  //   const industry =
+  //     targetIndustry?.value.trim() || "";
+
+  //   const jobDescription =
+  //     targetJd.value.trim();
+
+
+  //   /*
+  //    * Save user context before making
+  //    * the API request.
+  //    */
+  //   CareerForgeSession.updateSession({
+  //     targetRole: role,
+  //     company: company,
+  //     jobDescription: jobDescription,
+  //     resumeName: resumeFile.name
+  //   });
+
+
+  //   setAnalysisLoading();
+
+
+  //   try {
+
+  //     /*
+  //      * Teammate 1's analysis API.
+  //      */
+  //     const analysis =
+  //       await CareerForgeApi.analyzeCandidate(
+  //         resumeFile,
+  //         jobDescription,
+  //         role
+  //       );
+
+
+  //     /*
+  //      * Analysis becomes the central
+  //      * career context for later pages.
+  //      */
+  //     CareerForgeSession.setAnalysis(
+  //       analysis
+  //     );
+
+
+  //     setAnalysisSuccess();
+
+
+  //     /*
+  //      * Give the UI a moment to show
+  //      * completion before navigation.
+  //      */
+  //     setTimeout(() => {
+
+  //       window.location.href =
+  //         "pages/analysis.html";
+
+  //     }, 500);
+
+
+  //   } catch (error) {
+
+  //     console.error(
+  //       "Career analysis failed:",
+  //       error
+  //     );
+
+  //     setAnalysisError(
+  //       error.message ||
+  //       "Unable to analyze your career fit."
+  //     );
+  //   }
+  // }
+
+
+  /*
+   * --------------------------------
+   * Connect button
+   * --------------------------------
+   */
+
+  const runAnalysisBtn = document.getElementById("run-analysis-btn");
+
+  if (runAnalysisBtn) {
+    runAnalysisBtn.addEventListener("click", async (event) => {
+      console.log("🔥 START ANALYSIS CLICKED");
+      event.preventDefault();
+      console.log("✅ preventDefault completed");
+      const resumeFile =
+        window.CareerForgeCurrentResume ||
+        document.getElementById("resume-file")?.files?.[0];
+      console.log("📄 RESUME FILE:", resumeFile);
+      console.log("📄 RESUME TYPE:", resumeFile?.constructor?.name);
+      console.log("📄 RESUME NAME:", resumeFile?.name);
+
+      const targetRole =
+        document.getElementById("target-title")?.value.trim() || "";
+
+      const company =
+        document.getElementById("target-company")?.value.trim() || "";
+
+      const jobDescription =
+        document.getElementById("target-jd")?.value.trim() || "";
+
+      console.log("🎯 Role:", targetRole);
+      console.log("🏢 Company:", company);
+      console.log("📝 JD length:", jobDescription.length);
+
+      console.log("💾 Session object:", window.CareerForgeSession);
+      console.log("🌐 API object:", window.CareerForgeApi);
+      // -----------------------------
+      // Basic validation
+      // -----------------------------
+
+      if (!resumeFile) {
+        alert("Please select a resume first.");
+        return;
+      }
+
+      if (!jobDescription) {
+        alert("Please enter a job description.");
+        return;
+      }
+
+      // -----------------------------
+      // Loading state
+      // -----------------------------
+
+      const originalText = runAnalysisBtn.textContent;
+
+      runAnalysisBtn.disabled = true;
+      runAnalysisBtn.textContent = "Analyzing...";
+
+      console.log("🚀 ABOUT TO CALL ANALYSIS API");
+      try {
+
+        // -----------------------------
+        // Call backend
+        // -----------------------------
+
+        // console.log("🚨 BEFORE FETCH");
+
+        // fetch("http://localhost:8000/api/analyze", {
+        //   method: "POST",
+        //   body: new FormData()
+        // })
+        //   .then(response => {
+        //     console.log("🚨 FETCH RESPONSE:", response.status);
+        //   })
+        //   .catch(error => {
+        //     console.error("🚨 FETCH ERROR:", error);
+        //   });
+
+        // console.log("🚨 FETCH CALLED");
+
+                    const result =
+                        await window.CareerForgeApi.analyzeCandidate(
+                            resumeFile,
+                            jobDescription
+                        );
+                      console.log("✅ ANALYSIS API RETURNED");
+        console.log("📦 API RESULT:", result);
+
+                    console.log("Analysis API response:", result);
+        // -----------------------------
+        // Save everything into session
+        // -----------------------------
+
+        window.CareerForgeSession.updateSession({
+          targetRole: targetRole,
+          company: company,
+          jobDescription: jobDescription,
+          resumeName: resumeFile.name,
+          analysis: result
+        });
+
+        // Verify what was saved
+        console.log(
+          "CareerForge session:",
+          window.CareerForgeSession.getSession()
+        );
+
+        // -----------------------------
+        // Go to analysis page
+        // -----------------------------
+
+        // window.location.href = "pages/analysis.html";
+
+      } catch (error) {
+
+        console.error("Analysis failed:", error);
+
+        alert(
+          `Analysis failed: ${error.message || "Unknown error"}`
+        );
+
+        // Restore button
+        runAnalysisBtn.disabled = false;
+        runAnalysisBtn.textContent = originalText;
       }
     });
   }
 
-  if (resumeFileInput) {
-    resumeFileInput.addEventListener('change', (e) => {
-      if (e.target.files && e.target.files.length > 0) {
-        handleFileSelect(e.target.files[0]);
-      }
-    });
-  }
+  const replaceResumeButton =
+    document.getElementById("replace-resume-btn");
 
-  if (deleteBtn) {
-    deleteBtn.addEventListener('click', () => {
-      currentResumeFile = null;
-      if (resumeFileInput) resumeFileInput.value = '';
-      if (activeFilename) activeFilename.innerText = 'No resume selected';
-      if (resumeDetails) resumeDetails.innerHTML = '<span class="text-error">Required for analysis</span>';
-      validateInputs();
-    });
-  }
+  const deleteResumeButton =
+    document.getElementById("delete-resume-btn");
 
-  function handleFileSelect(file) {
-    clearError();
-    const validExtensions = ['.pdf', '.docx'];
-    const ext = file.name.slice((file.name.lastIndexOf('.') - 1 >>> 0) + 2).toLowerCase();
-    
-    if (!validExtensions.includes('.' + ext)) {
-      showError('Only PDF and DOCX files are supported.');
+  replaceResumeButton?.addEventListener("click", () => {
+    resumeInput?.click();
+  });
+
+
+  deleteResumeButton?.addEventListener("click", () => {
+
+    if (!resumeInput) return;
+
+    resumeInput.value = "";
+
+    window.CareerForgeCurrentResume = null;
+
+    if (filenameDisplay) {
+      filenameDisplay.textContent =
+        "No resume selected";
+    }
+    if (resumeSize) {
+      resumeSize.textContent =
+        "No file selected";
+    }
+  });
+
+
+  function updateTargetContext() {
+
+    if (!targetContext) return;
+
+    const role =
+      targetTitle?.value.trim() || "";
+
+    const company =
+      targetCompany?.value.trim() || "";
+
+    if (!role && !company) {
+      targetContext.textContent =
+        "Target: No target selected";
       return;
     }
 
-    currentResumeFile = file;
-    if (activeFilename) {
-      activeFilename.innerText = file.name;
+    if (role && company) {
+      targetContext.textContent =
+        `Target: ${role} @ ${company}`;
+      return;
     }
-    if (resumeDetails) {
-      const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
-      resumeDetails.innerHTML = `<span>${sizeMb} MB</span> • <span class="text-secondary">${ext.toUpperCase()}</span> • <span class="text-secondary">Ready to analyze</span>`;
-    }
-    validateInputs();
+
+    targetContext.textContent =
+      `Target: ${role || company}`;
   }
+  targetTitle?.addEventListener(
+    "input",
+    updateTargetContext
+  );
 
-  function showError(msg) {
-    if (validationError) {
-      validationError.innerText = msg;
-      validationError.classList.remove('hidden');
-    } else {
-      alert(msg);
-    }
-  }
+  targetCompany?.addEventListener(
+    "input",
+    updateTargetContext
+  );
 
-  function clearError() {
-    if (validationError) {
-      validationError.innerText = '';
-      validationError.classList.add('hidden');
-    }
-  }
 
-  function validateInputs() {
-    const hasJd = targetJd && targetJd.value.trim().length > 0;
-    const hasResume = currentResumeFile !== null;
-    
-    if (!hasResume || !hasJd) {
-      if (runBtn) {
-        runBtn.classList.add('opacity-50', 'cursor-not-allowed');
-      }
-      return false;
-    } else {
-      if (runBtn && !runBtn.disabled) {
-        runBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-      }
-      return true;
-    }
-  }
+  /*
+   * Initial state
+   */
+  updateJdCounter();
 
-  // Handle Form Submission / Analyze Trigger
-  if (runBtn) {
-    runBtn.addEventListener('click', async () => {
-      clearError();
-      if (!currentResumeFile) {
-        showError('Please select or upload a resume file (PDF or DOCX).');
-        return;
-      }
-
-      const jdText = targetJd ? targetJd.value.trim() : '';
-      if (!jdText) {
-        showError('Please enter or paste the target job description text.');
-        return;
-      }
-
-      // Enter Loading State
-      runBtn.disabled = true;
-      runBtn.classList.add('opacity-75', 'cursor-wait');
-      const originalBtnContent = runBtn.innerHTML;
-      runBtn.innerHTML = '<span class="material-symbols-outlined text-2xl animate-spin">refresh</span><span>Analyzing Career Fit...</span>';
-      
-      if (simulatorStatus) {
-        simulatorStatus.innerText = 'EXTRACTING & MATCHING...';
-        simulatorStatus.classList.add('animate-pulse');
-      }
-
-      try {
-        const result = await window.CareerForgeApi.analyzeCandidate(currentResumeFile, jdText);
-        
-        // Save to sessionStorage for cross-page retrieval
-        sessionStorage.setItem('careerforge_analysis_result', JSON.stringify({
-          data: result,
-          meta: {
-            resume_filename: currentResumeFile.name,
-            job_title: document.getElementById('target-title') ? document.getElementById('target-title').value : '',
-            company: document.getElementById('target-company') ? document.getElementById('target-company').value : '',
-            analyzed_at: new Date().toISOString()
-          }
-        }));
-
-        if (simulatorStatus) {
-          simulatorStatus.innerText = 'ANALYSIS COMPLETE';
-          simulatorStatus.classList.remove('animate-pulse');
-        }
-
-        // Navigate to analysis page
-        window.location.href = 'pages/analysis.html';
-
-      } catch (err) {
-        console.error('Analysis submission failed:', err);
-        showError(`Analysis failed: ${err.message || 'Check that backend server is running.'}`);
-        runBtn.disabled = false;
-        runBtn.classList.remove('opacity-75', 'cursor-wait');
-        runBtn.innerHTML = originalBtnContent;
-        if (simulatorStatus) {
-          simulatorStatus.innerText = 'FAILED';
-          simulatorStatus.classList.remove('animate-pulse');
-        }
-      }
-    });
-  }
-
-  // Initial validation check
-  validateInputs();
 });

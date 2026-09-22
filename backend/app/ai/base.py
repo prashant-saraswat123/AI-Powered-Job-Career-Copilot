@@ -1,6 +1,9 @@
 from abc import ABC, abstractmethod
 
-from app.schemas.analysis import CandidateProfile, JobProfile
+from app.schemas.analysis import (
+    CandidateProfile,
+    JobProfile,
+)
 
 
 class AIService(ABC):
