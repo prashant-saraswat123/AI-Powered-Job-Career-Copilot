@@ -1,6 +1,10 @@
 import json
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 os.environ["PATH"] += os.pathsep + r"C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin"
 
 from azure.ai.projects import AIProjectClient
