@@ -5,7 +5,6 @@ const API_BASE_URL =
 
 async function request(endpoint, options = {}) {
     const url = `${API_BASE_URL}${endpoint}`;
-    
 
     const config = {
         ...options,
@@ -19,13 +18,12 @@ async function request(endpoint, options = {}) {
 
     try {
         console.log("🌐 FETCH START");
-console.log("🌐 URL:", url);
-console.log("🌐 CONFIG:", config);
+        console.log("🌐 URL:", url);
+        console.log("🌐 CONFIG:", config);
 
-const response = await fetch(url, config);
+        const response = await fetch(url, config);
 
-console.log("🌐 FETCH RESPONSE RECEIVED:", response.status);
-
+        console.log("🌐 FETCH RESPONSE RECEIVED:", response.status);
 
         let data = null;
 
@@ -57,34 +55,19 @@ console.log("🌐 FETCH RESPONSE RECEIVED:", response.status);
 }
 
 
+/* ============================================================
+   HEALTH
+   ============================================================ */
+
 async function healthCheck() {
     return request("/health");
 }
 
 
-/*
- * STEP 1
- * Resume + JD → Career Analysis
- */
-// async function analyzeCandidate(resumeFile, jobDescription) {
-//     if (!resumeFile) {
-//         throw new Error("Please select a resume.");
-//     }
-
-//     if (!jobDescription || !jobDescription.trim()) {
-//         throw new Error("Please enter a job description.");
-//     }
-
-//     const formData = new FormData();
-
-//     formData.append("resume", resumeFile);
-//     formData.append("job_description", jobDescription.trim());
-
-//     return request("/api/analyze", {
-//         method: "POST",
-//         body: formData
-//     });
-// }
+/* ============================================================
+   STEP 1
+   Resume + JD → Career Analysis
+   ============================================================ */
 
 async function analyzeCandidate(resumeFile, jobDescription) {
     console.log("🟢 analyzeCandidate ENTERED");
@@ -123,13 +106,11 @@ async function analyzeCandidate(resumeFile, jobDescription) {
 }
 
 
-/*
- * STEP 2
- * Career Analysis → Personalized Roadmap
- *
- * Endpoint/schema may be adjusted once we bring
- * teammate 1's actual implementation into this repo.
- */
+/* ============================================================
+   STEP 2
+   Career Analysis → Personalized Roadmap
+   ============================================================ */
+
 async function generateRoadmap(payload) {
     return request("/api/roadmap/generate", {
         method: "POST",
@@ -138,41 +119,180 @@ async function generateRoadmap(payload) {
 }
 
 
+/* ============================================================
+   STEP 3
+   Start Interview
+   ============================================================ */
+
 /*
- * STEP 3
- * Career Analysis → Interview Questions
+ * Backend endpoint:
+ *
+ * POST /api/v1/interviews/start
+ *
+ * Body:
+ * {
+ *   candidate_id,
+ *   name,
+ *   target_role,
+ *   years_of_experience,
+ *   skills: [],
+ *   known_skill_gaps: []
+ * }
  */
-async function generateInterviewQuestions(payload) {
-    return request("/api/interview/questions", {
+
+async function generateInterviewQuestions(candidateProfile) {
+    console.log("🎤 Starting interview...");
+    console.log("🎤 Candidate profile:", candidateProfile);
+
+    return request("/api/v1/interviews/start", {
         method: "POST",
-        body: JSON.stringify(payload)
+        body: JSON.stringify(candidateProfile)
     });
 }
 
 
-/*
- * STEP 4
- * Interview answers → Evaluation
- */
-async function evaluateInterview(payload) {
-    return request("/api/interview/evaluate", {
-        method: "POST",
-        body: JSON.stringify(payload)
-    });
-}
-
+/* ============================================================
+   STEP 4
+   Interview Answer → Evaluation
+   ============================================================ */
 
 /*
- * Optional final interview report endpoint.
+ * Backend endpoint:
+ *
+ * POST /api/v1/interviews/{interview_id}/answer
+ *
+ * Body:
+ * {
+ *   "answer_text": "..."
+ * }
  */
-async function getInterviewReport(sessionId) {
+
+async function evaluateInterview(interviewId, answerText) {
+    console.log("🧠 Evaluating interview answer...");
+    console.log("🧠 Interview ID:", interviewId);
+    console.log("🧠 Answer:", answerText);
+
+    if (!interviewId) {
+        throw new Error("Interview ID is missing.");
+    }
+
+    if (!answerText || !answerText.trim()) {
+        throw new Error("Answer text is empty.");
+    }
+
     return request(
-        `/api/interview/session/${encodeURIComponent(sessionId)}/report`
+        `/api/v1/interviews/${encodeURIComponent(interviewId)}/answer`,
+        {
+            method: "POST",
+            body: JSON.stringify({
+                answer_text: answerText.trim()
+            })
+        }
     );
 }
 
 
+/* ============================================================
+   STEP 5
+   Get Interview State
+   ============================================================ */
+
+/*
+ * Backend endpoint:
+ *
+ * GET /api/v1/interviews/{interview_id}/state
+ */
+
+async function getInterviewState(interviewId) {
+    console.log("📋 Loading interview state...");
+    console.log("📋 Interview ID:", interviewId);
+
+    if (!interviewId) {
+        throw new Error("Interview ID is missing.");
+    }
+
+    return request(
+        `/api/v1/interviews/${encodeURIComponent(interviewId)}/state`,
+        {
+            method: "GET"
+        }
+    );
+}
+
+
+/* ============================================================
+   STEP 6
+   End Interview / Generate Report
+   ============================================================ */
+
+/*
+ * Backend endpoint:
+ *
+ * POST /api/v1/interviews/{interview_id}/end
+ *
+ * This generates and returns the final interview report.
+ */
+
+async function endInterview(interviewId) {
+    console.log("🏁 Ending interview...");
+    console.log("🏁 Interview ID:", interviewId);
+
+    if (!interviewId) {
+        throw new Error("Interview ID is missing.");
+    }
+
+    return request(
+        `/api/v1/interviews/${encodeURIComponent(interviewId)}/end`,
+        {
+            method: "POST"
+        }
+    );
+}
+
+
+/* ============================================================
+   STEP 7
+   Audio → Speech Transcription
+   ============================================================ */
+
+/*
+ * Backend endpoint:
+ *
+ * POST /api/v1/interviews/transcribe
+ *
+ * Expects multipart/form-data:
+ * audio = WAV file
+ */
+
+async function transcribeInterviewAudio(audioBlob) {
+    console.log("🎙️ Transcribing interview audio...");
+
+    if (!audioBlob) {
+        throw new Error("Audio recording is missing.");
+    }
+
+    const formData = new FormData();
+
+    formData.append(
+        "audio",
+        audioBlob,
+        "answer.wav"
+    );
+
+    return request("/api/v1/interviews/transcribe", {
+        method: "POST",
+        body: formData
+    });
+}
+
+
+/* ============================================================
+   EXPORT API
+   ============================================================ */
+
 window.CareerForgeApi = {
+    API_BASE_URL,
+
     request,
     healthCheck,
 
@@ -181,5 +301,7 @@ window.CareerForgeApi = {
 
     generateInterviewQuestions,
     evaluateInterview,
-    getInterviewReport
+    getInterviewState,
+    endInterview,
+    transcribeInterviewAudio
 };

@@ -390,20 +390,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Call backend
         // -----------------------------
 
-        // console.log("🚨 BEFORE FETCH");
-
-        // fetch("http://localhost:8000/api/analyze", {
-        //   method: "POST",
-        //   body: new FormData()
-        // })
-        //   .then(response => {
-        //     console.log("🚨 FETCH RESPONSE:", response.status);
-        //   })
-        //   .catch(error => {
-        //     console.error("🚨 FETCH ERROR:", error);
-        //   });
-
-        // console.log("🚨 FETCH CALLED");
 
                     const result =
                         await window.CareerForgeApi.analyzeCandidate(
@@ -436,7 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Go to analysis page
         // -----------------------------
 
-        // window.location.href = "pages/analysis.html";
+        window.location.href = "pages/analysis.html";
 
       } catch (error) {
 

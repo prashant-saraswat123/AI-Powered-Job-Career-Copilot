@@ -1,380 +1,974 @@
 <!DOCTYPE html>
+<html class="dark" lang="en">
 
-<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Career Copilot</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"background":"#0f131d","on-tertiary-container":"#3e2400","on-secondary-container":"#00311f","on-tertiary-fixed":"#2a1700","on-secondary-fixed":"#002113","on-surface-variant":"#c5c5d7","primary-fixed-dim":"#bdc2ff","inverse-surface":"#dfe2f1","tertiary-fixed":"#ffddb8","surface-tint":"#bdc2ff","error-container":"#93000a","on-primary-fixed":"#000865","surface":"#0f131d","outline":"#8f8fa0","on-tertiary":"#472a00","on-secondary":"#003824","on-primary-container":"#00108d","secondary-fixed-dim":"#4edea3","on-primary-fixed-variant":"#1d2fc3","outline-variant":"#454655","primary":"#bdc2ff","surface-container-lowest":"#0a0e18","secondary-container":"#00a572","inverse-on-surface":"#2c303b","tertiary-container":"#ca8100","secondary":"#4edea3","error":"#ffb4ab","tertiary-fixed-dim":"#ffb95f","surface-container-high":"#262a35","on-primary":"#00139f","on-background":"#dfe2f1","surface-container-low":"#171b26","surface-dim":"#0f131d","inverse-primary":"#3c4cdb","on-error":"#690005","on-tertiary-fixed-variant":"#653e00","on-surface":"#dfe2f1","on-secondary-fixed-variant":"#005236","surface-container-highest":"#313540","primary-fixed":"#dfe0ff","primary-container":"#7886ff","tertiary":"#ffb95f","on-error-container":"#ffdad6","surface-bright":"#353944","secondary-fixed":"#6ffbbe","surface-variant":"#313540","surface-container":"#1c1f2a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-2xl":"3rem","margin":"2rem","space-2xs":"0.25rem","margin-mobile":"1rem","gutter-mobile":"1rem","space-sm":"0.75rem","space-md":"1rem","space-xs":"0.5rem","gutter":"1.5rem","space-lg":"1.5rem"},"fontFamily":{"body-md":["Manrope"],"body-lg":["Manrope"],"headline-lg-mobile":["Plus Jakarta Sans"],"title-md":["Manrope"],"label-badge":["Manrope"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Manrope"],"display-hero-mobile":["Plus Jakarta Sans"],"label-code":["JetBrains Mono"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"]},"fontSize":{"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.45)]"><div class="h-28 w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col justify-between pt-space-xs pb-space-xs"><div class="flex items-center justify-between h-14"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" href="../index.html"><img alt="Career Copilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WulXIdmjnfBMvbSw67U99vu01KlISsdFceqF1rw7P9BIXUR_sNMlpYAr2aY7FVcz2kzeJVMwTbcWxhxjD9R8ADbkreAxwvTIcQNvoRlEeUcCwY_OQJfEtRgDnxALk7CmmQCbZ4JHby0EDQhN9RwMZInG9V_G0mMqUOMrza0adpF1E72TItNbig7I58FJ_yzkooO9CeO43BtPBfinSUkxTxEA8I1Ucx3zBngm14dlTWIXTqFpxumxwMtCOT"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Career Copilot</span></a><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-high"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-code text-label-code text-on-surface uppercase tracking-wider font-semibold">Target: Senior Product Manager @ Stripe</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container"><span class="font-label-badge text-label-badge uppercase text-secondary font-bold">Copilot v2.4</span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-body-sm text-body-sm text-on-surface-variant">Active Analysis</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCajukYYkSdWPP7DxDjjLUTkqwfn-juAWcWCxKvJbtl2Msm9fH6BbLgchnHj5Fl2kStYGCyTAtehBKLVylzNi8WaArSVSgr37fuC78xx52uZdl8QxBz81i_y_MY6VkPWMEgjvPOt05agdcR7L6CG1q8HQ7ZELYzko9xVmEno_qPHlG6_jXrhjMTsjQe4omxp4UiDWDGafRdKHtFaj63HEb-BQrd4_i0yRZJydXJ-5GNlN9gC5CVmX8ZA"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span></div><div class="hidden sm:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface">Alex Mercer</span><span class="font-body-sm text-body-sm text-on-surface-variant">Executive Member</span></div></div></div></div><div class="flex items-center justify-between h-11"><nav class="flex items-center gap-space-xs overflow-x-auto py-space-2xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="setup-intake" href="../index.html">Setup &amp; Intake</a><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="career-analysis" href="analysis.html">Career Analysis</a><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="action-roadmap" href="roadmap.html">Action Roadmap</a><a aria-current="page" class="px-space-md py-space-2xs transition-colors whitespace-nowrap bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="interview-studio" href="interview.html">Interview Studio</a><a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap" data-path="profile-context" href="#">Profile &amp; Context</a></nav><div class="hidden lg:flex items-center gap-space-sm"><div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low"><span class="font-label-code text-label-code text-secondary font-bold">72% READINESS</span><span class="text-outline-variant">•</span><span class="font-label-code text-label-code text-tertiary font-bold">3 GAPS</span></div><button class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-base">bolt</span><span>Copilot Prompt</span></button></div></div></div></header><main class="w-full pt-28 bg-background min-h-[calc(100vh-140px)]"><div class="flex flex-col w-full">
-<!-- Top Session Diagnostic Bar -->
-<section class="w-full bg-surface-container-lowest py-space-sm px-margin-mobile md:px-margin shadow-sm">
-<div class="max-w-[1360px] mx-auto flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
-<!-- Role & Type Info -->
-<div class="flex flex-wrap items-center gap-space-sm">
-<div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-space-2xs rounded-full">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="font-label-code text-label-code text-on-surface uppercase tracking-wider font-semibold">Simulation Active</span>
-</div>
-<div class="h-4 w-px bg-surface-container-highest hidden sm:block"></div>
-<span class="font-title-md text-title-md text-on-surface font-semibold truncate">Target: Lead Product Manager (Platform Ecosystems)</span>
-<div class="flex items-center gap-space-xs bg-tertiary-container/20 text-tertiary px-space-sm py-space-2xs rounded-full">
-<span class="material-symbols-outlined text-sm">flag</span>
-<span class="font-label-badge text-label-badge uppercase tracking-wider">Gap: Platform Monetization &amp; Governance</span>
-</div>
-</div>
-<!-- Progression Track & Controls -->
-<div class="flex items-center justify-between lg:justify-end gap-space-lg">
-<!-- Progress Steps -->
-<div class="flex items-center gap-space-sm">
-<div class="flex flex-col text-right">
-<span class="font-label-code text-label-code text-on-surface-variant uppercase">Question 2 / 5</span>
-<span class="font-label-code text-label-code text-secondary font-bold" id="timer-display">08:42 ELAPSED</span>
-</div>
-<div class="w-24 md:w-32 h-2 bg-surface-container rounded-full overflow-hidden flex">
-<div class="h-full bg-secondary w-2/5 transition-all duration-500"></div>
-</div>
-</div>
-<!-- Safe Exit Button -->
-<button class="flex items-center gap-space-2xs px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface transition-colors" type="button">
-<span class="material-symbols-outlined text-base">logout</span>
-<span class="font-body-sm text-body-sm font-semibold whitespace-nowrap">Finish &amp; View Report</span>
-</button>
-</div>
-</div>
-</section>
-<!-- Main Stage Workspace -->
-<div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin py-space-xl grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-<!-- Active Stage & Speech Interface (Left 8 Cols) -->
-<div class="lg:col-span-8 flex flex-col gap-space-lg">
-<!-- AI Interviewer Presence Card -->
-<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-lg shadow-xl">
-<div class="absolute -right-16 -top-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-<div class="flex items-start justify-between gap-space-md mb-space-md">
-<div class="flex items-center gap-space-md">
-<!-- Simulated AI Persona Avatar & Dynamic Waveform -->
-<div class="relative flex-shrink-0">
-<div class="w-14 h-14 rounded-xl bg-surface-container-highest flex items-center justify-center shadow-inner overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Futuristic clean holographic avatar icon of an executive tech recruiter AI with indigo subtle glow and minimal lines on dark obsidian background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrguuYXX7y79NpvYgi7vW9b-ViWtMV5sdDaPNHxUaSE3hoA5_kWFeouXeGnDCCSYvClu7x_CyzOB3YwViCQkBW94JbgCT_Wp52gPIXVLvbYT2NyUKDUU1QS6p9FAtnm4lkmxI1L0lz7U-K9V1gGeNMFmKdzDTxAUy4AT_jhUtBtTUG-0_MxxMOeRIXRtFWt7xbz1ABzcO4UKFwfscxJOvQZUXY_ILMbqPwqlE-dQxDbIh1XlORxSpMTw"/>
-</div>
-<span class="absolute -bottom-1 -right-1 flex h-4 w-4">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-4 w-4 bg-secondary"></span>
-</span>
-</div>
-<div>
-<div class="flex items-center gap-space-xs">
-<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Dr. Evelyn Vance</span>
-<span class="font-label-badge text-label-badge uppercase px-space-2xs py-0.5 rounded bg-surface-container-high text-on-surface-variant">AI Partner Evaluator</span>
-</div>
-<div class="flex items-center gap-space-xs mt-0.5">
-<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-<span class="font-body-sm text-body-sm text-secondary font-medium">Listening for your response...</span>
-</div>
-</div>
-</div>
-<!-- Question Sequence Badge -->
-<div class="bg-surface-container px-space-sm py-space-2xs rounded-lg flex items-center gap-space-2xs">
-<span class="font-label-code text-label-code text-on-surface-variant font-bold">STAGE 02</span>
-<span class="text-outline-variant">/</span>
-<span class="font-label-code text-label-code text-primary font-bold">SYSTEMS DESIGN</span>
-</div>
-</div>
-<!-- Question Prompt Area -->
-<div class="bg-surface-container/70 rounded-lg p-space-md mb-space-md">
-<div class="flex items-center gap-space-xs mb-space-xs">
-<span class="material-symbols-outlined text-tertiary text-base">psychology_alt</span>
-<span class="font-label-badge text-label-badge text-tertiary uppercase tracking-wider font-bold">Direct Competency Drill</span>
-<span class="font-label-code text-label-code text-on-surface-variant">[Identified Gap: Monetization Strategy]</span>
-</div>
-<p class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-relaxed">
-            “You mentioned earlier that you led the developer portal rollout. In this role, we need someone who can negotiate monetization tiers and API rate limits with key strategic enterprise partners who push back on pricing changes. Walk me through how you’d design an API pricing transition without alienating top developers.”
-          </p>
-</div>
-<!-- Real-time Voice Audio Visualizer Mockup -->
-<div class="flex items-center justify-between bg-surface-container-lowest px-space-md py-space-xs rounded-lg">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-primary text-base">hearing</span>
-<span class="font-label-code text-label-code text-on-surface-variant">SPEECH DETECTOR ACTIVE</span>
-</div>
-<!-- Waveform bars -->
-<div class="flex items-center gap-1 h-6">
-<span class="w-1 bg-secondary/80 rounded-full h-2 animate-[pulse_1.1s_ease-in-out_infinite]"></span>
-<span class="w-1 bg-secondary/90 rounded-full h-5 animate-[pulse_0.8s_ease-in-out_infinite]"></span>
-<span class="w-1 bg-secondary rounded-full h-3 animate-[pulse_1.4s_ease-in-out_infinite]"></span>
-<span class="w-1 bg-secondary/70 rounded-full h-6 animate-[pulse_0.9s_ease-in-out_infinite]"></span>
-<span class="w-1 bg-secondary rounded-full h-4 animate-[pulse_1.2s_ease-in-out_infinite]"></span>
-<span class="w-1 bg-secondary/60 rounded-full h-2 animate-[pulse_0.7s_ease-in-out_infinite]"></span>
-<span class="w-1 bg-secondary/80 rounded-full h-5 animate-[pulse_1.3s_ease-in-out_infinite]"></span>
-</div>
-</div>
-</div>
-<!-- Candidate Interactive Speech & Input Console -->
-<div class="rounded-xl bg-surface-container-low p-space-lg shadow-xl flex flex-col gap-space-md">
-<!-- Live Speech Capture Area -->
-<div class="flex flex-col gap-space-md" id="voice-input-panel">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-space-sm">
-<div class="relative flex items-center justify-center">
-<span class="absolute w-10 h-10 rounded-full bg-secondary/20 animate-ping"></span>
-<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-on-secondary shadow-lg">
-<span class="material-symbols-outlined text-xl">mic</span>
-</div>
-</div>
-<div class="flex flex-col">
-<span class="font-title-md text-title-md font-semibold text-on-surface">Microphone Active</span>
-<span class="font-body-sm text-body-sm text-secondary">Transcribing stream in real-time...</span>
-</div>
-</div>
-<!-- Volume / Signal Level Meter -->
-<div class="hidden sm:flex items-center gap-space-xs bg-surface-container px-space-sm py-space-2xs rounded-full">
-<span class="font-label-code text-label-code text-on-surface-variant">INPUT:</span>
-<div class="flex gap-1 items-center">
-<div class="w-1 h-3 bg-secondary rounded-full"></div>
-<div class="w-1 h-3 bg-secondary rounded-full"></div>
-<div class="w-1 h-3 bg-secondary rounded-full"></div>
-<div class="w-1 h-3 bg-secondary/40 rounded-full"></div>
-<div class="w-1 h-3 bg-surface-container-highest rounded-full"></div>
-</div>
-</div>
-</div>
-<!-- Real-Time Dynamic Transcript Preview Card -->
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-inner flex flex-col gap-space-xs min-h-[140px]">
-<div class="flex items-center justify-between">
-<span class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant font-bold">Candidate Live Stream</span>
-<span class="font-label-code text-label-code text-on-surface-variant">114 words • 01:24 duration</span>
-</div>
-<p class="font-body-lg text-body-lg text-on-surface leading-relaxed" id="transcript-stream">
-              “In my previous experience handling developer tiering at cloud scale, I first segment partners by API consumption velocity and critical service dependency. Rather than an abrupt pricing cliff, I introduce an incentive-driven grace model with a 90-day shadow billing report so engineering leadership sees usage transparently. Simultaneously, we couple rate limit ceilings with grandfathered pricing guarantees for enterprise integration partners who commit to annual SDK upgrades...”
-              <span class="inline-block w-2 h-4 bg-primary ml-1 animate-pulse"></span>
-</p>
-</div>
-<!-- Voice Control Actions -->
-<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
-<div class="flex items-center gap-space-xs">
-<button class="flex items-center gap-space-2xs px-space-md py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-md text-body-md transition-colors" type="button">
-<span class="material-symbols-outlined text-base">pause</span>
-<span>Pause Recording</span>
-</button>
-<button class="flex items-center gap-space-2xs px-space-md py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-error transition-colors" type="button">
-<span class="material-symbols-outlined text-base">restart_alt</span>
-<span>Clear &amp; Restart</span>
-</button>
-</div>
-<button class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-primary-container hover:opacity-95 text-on-primary-container font-title-md text-title-md font-semibold transition-all shadow-md" type="button">
-<span>Submit Answer</span>
-<span class="material-symbols-outlined text-lg">arrow_forward</span>
-</button>
-</div>
-</div>
-<!-- Text Fallback Toggle & Panel -->
-<div class="pt-space-xs">
-<button class="flex items-center gap-space-xs text-primary hover:text-primary-fixed transition-colors font-body-sm text-body-sm font-semibold" id="toggle-text-mode" type="button">
-<span class="material-symbols-outlined text-base" id="toggle-icon">keyboard</span>
-<span id="toggle-label">Prefer to type response instead?</span>
-</button>
-<!-- Hidden Text Fallback Area -->
-<div class="hidden flex-col gap-space-sm mt-space-sm" id="text-input-panel">
-<div class="relative">
-<textarea class="w-full rounded-lg bg-surface-container-lowest p-space-md font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="Type your strategic response here. Emphasize metrics, partner trade-offs, and governance steps..." rows="5"></textarea>
-<div class="absolute bottom-3 right-3 flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
-<span class="material-symbols-outlined text-xs text-secondary">cloud_done</span>
-<span>Draft Saved</span>
-</div>
-</div>
-<div class="flex justify-end gap-space-xs">
-<button class="px-space-md py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-bright font-body-sm text-body-sm text-on-surface" type="button">Discard Draft</button>
-<button class="px-space-lg py-space-xs rounded-lg bg-primary-container text-on-primary-container font-title-md text-title-md font-semibold hover:opacity-90" type="button">Submit Written Response</button>
-</div>
-</div>
-</div>
-</div>
-<!-- Context Visual: Candidate Response Telemetry -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Metric 1 -->
-<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-2xs">
-<div class="flex items-center justify-between">
-<span class="font-label-badge text-label-badge text-on-surface-variant uppercase font-bold">Pacing &amp; Speed</span>
-<span class="material-symbols-outlined text-secondary text-sm">speed</span>
-</div>
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold">132 WPM</span>
-<span class="font-body-sm text-body-sm text-secondary">Optimal cadence for executive panels</span>
-</div>
-<!-- Metric 2 -->
-<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-2xs">
-<div class="flex items-center justify-between">
-<span class="font-label-badge text-label-badge text-on-surface-variant uppercase font-bold">Monetization Depth</span>
-<span class="material-symbols-outlined text-tertiary text-sm">monetization_on</span>
-</div>
-<span class="font-headline-sm text-headline-sm text-tertiary font-bold">Moderate</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Include specific billing architecture</span>
-</div>
-<!-- Metric 3 -->
-<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-space-2xs">
-<div class="flex items-center justify-between">
-<span class="font-label-badge text-label-badge text-on-surface-variant uppercase font-bold">Signal Sentiment</span>
-<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
-</div>
-<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Collaborative</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Strong partner diplomacy framing</span>
-</div>
-</div>
-</div>
-<!-- Live Context Helper & Interview Session Sidebar (Right 4 Cols) -->
-<aside class="lg:col-span-4 flex flex-col gap-space-lg">
-<!-- Verified Competencies to Weave In -->
-<div class="rounded-xl bg-surface-container-low p-space-md shadow-lg flex flex-col gap-space-sm">
-<div class="flex items-center justify-between pb-space-xs">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-base">stars</span>
-<span class="font-title-md text-title-md font-semibold text-on-surface">Target Strengths to Highlight</span>
-</div>
-<span class="font-label-badge text-label-badge text-secondary font-bold uppercase">2 Verified</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-          Weave your verified background assets naturally into this answer to show continuity.
-        </p>
-<div class="space-y-space-xs pt-space-2xs">
-<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-start gap-space-sm">
-<span class="material-symbols-outlined text-secondary text-base mt-0.5">check_circle</span>
-<div class="flex flex-col">
-<span class="font-body-md text-body-md font-semibold text-on-surface">Cross-Functional Stakeholder Alignment</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Leverage your 80+ partner buy-in experience from the developer summit.</span>
-</div>
-</div>
-<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-start gap-space-sm">
-<span class="material-symbols-outlined text-secondary text-base mt-0.5">check_circle</span>
-<div class="flex flex-col">
-<span class="font-body-md text-body-md font-semibold text-on-surface">API Rate-Limiting Architecture</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Reference token bucket algorithms vs. tiered SLA throttling.</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Real-Time Gap Coaching Hints -->
-<div class="rounded-xl bg-surface-container-low p-space-md shadow-lg flex flex-col gap-space-sm">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-tertiary text-base">tips_and_updates</span>
-<span class="font-title-md text-title-md font-semibold text-on-surface">Copilot Guardrails for This Gap</span>
-</div>
-<div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs">
-<div class="flex items-center gap-space-xs">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
-<span class="font-body-sm text-body-sm font-semibold text-on-surface">Quantify Partner Incentive Structures</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant pl-space-sm">
-            Avoid purely punitive rate limiting. Explain how tier upgrades unlock higher burst throughput or premium sandbox access.
-          </p>
-</div>
-<div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs">
-<div class="flex items-center gap-space-xs">
-<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
-<span class="font-body-sm text-body-sm font-semibold text-on-surface">Mention Risk &amp; Churn Mitigation</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant pl-space-sm">
-            How do you handle an enterprise partner threatening to migrate off the ecosystem? Define escalation matrices.
-          </p>
-</div>
-</div>
-<!-- Full Session Question Navigator -->
-<div class="rounded-xl bg-surface-container-low p-space-md shadow-lg flex flex-col gap-space-sm">
-<div class="flex items-center justify-between">
-<span class="font-title-md text-title-md font-semibold text-on-surface">Interview Question Queue</span>
-<span class="font-label-code text-label-code text-on-surface-variant">5 ROUNDS</span>
-</div>
-<div class="space-y-space-xs mt-space-2xs">
-<!-- Q1: Answered -->
-<div class="p-space-sm rounded-lg bg-surface-container-lowest/70 flex items-center justify-between opacity-80">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
-<span class="font-body-sm text-body-sm text-on-surface line-through">01. Partner Onboarding Lifecycle</span>
-</div>
-<span class="font-label-code text-label-code text-secondary">COMPLETE</span>
-</div>
-<!-- Q2: Active -->
-<div class="p-space-sm rounded-lg bg-surface-container-high flex items-center justify-between shadow-md">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-primary text-base">radio_button_checked</span>
-<span class="font-body-sm text-body-sm font-bold text-on-surface">02. API Monetization Pushback</span>
-</div>
-<span class="font-label-code text-label-code text-primary font-bold">CURRENT</span>
-</div>
-<!-- Q3: Upcoming -->
-<div class="p-space-sm rounded-lg bg-surface-container-lowest/40 flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-on-surface-variant text-base">schedule</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">03. Regulatory Governance (PSD2/GDPR)</span>
-</div>
-<span class="font-label-code text-label-code text-on-surface-variant">UPCOMING</span>
-</div>
-<!-- Q4: Upcoming -->
-<div class="p-space-sm rounded-lg bg-surface-container-lowest/40 flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-on-surface-variant text-base">schedule</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">04. Resolving Senior Eng Impasse</span>
-</div>
-<span class="font-label-code text-label-code text-on-surface-variant">UPCOMING</span>
-</div>
-<!-- Q5: Upcoming -->
-<div class="p-space-sm rounded-lg bg-surface-container-lowest/40 flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-on-surface-variant text-base">schedule</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">05. Critical Production Post-Mortem</span>
-</div>
-<span class="font-label-code text-label-code text-on-surface-variant">UPCOMING</span>
-</div>
-</div>
-<!-- Session Confidence Visual Gauge -->
-<div class="mt-space-sm p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between">
-<div class="flex flex-col">
-<span class="font-label-badge text-label-badge text-on-surface-variant uppercase font-bold">Estimated Readiness</span>
-<span class="font-headline-sm text-headline-sm font-bold text-secondary">78.4%</span>
-</div>
-<!-- Compact SVG Circular Meter -->
-<div class="w-12 h-12 relative flex items-center justify-center">
-<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
-<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
-<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="78, 100" stroke-linecap="round" stroke-width="3.5"></path>
-</svg>
-<span class="material-symbols-outlined absolute text-secondary text-sm">trending_up</span>
-</div>
-</div>
-</div>
-</aside>
-</div>
-<!-- Interactive Script Logic for Mode Switch and Mock Timer -->
-<script>
-    (function() {
-      // Toggle typing fallback mode
-      const toggleBtn = document.getElementById('toggle-text-mode');
-      const textPanel = document.getElementById('text-input-panel');
-      const toggleLabel = document.getElementById('toggle-label');
-      const toggleIcon = document.getElementById('toggle-icon');
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
 
-      if (toggleBtn && textPanel) {
-        toggleBtn.addEventListener('click', function() {
-          const isHidden = textPanel.classList.contains('hidden');
-          if (isHidden) {
-            textPanel.classList.remove('hidden');
-            textPanel.classList.add('flex');
-            toggleLabel.textContent = 'Switch back to voice recording';
-            toggleIcon.textContent = 'mic';
-          } else {
-            textPanel.classList.add('hidden');
-            textPanel.classList.remove('flex');
-            toggleLabel.textContent = 'Prefer to type response instead?';
-            toggleIcon.textContent = 'keyboard';
+  <title>Career Copilot - Interview Studio</title>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+
+  <style>
+    @layer base {
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            background: "#0f131d",
+            "on-tertiary-container": "#3e2400",
+            "on-secondary-container": "#00311f",
+            "on-tertiary-fixed": "#2a1700",
+            "on-secondary-fixed": "#002113",
+            "on-surface-variant": "#c5c5d7",
+            "primary-fixed-dim": "#bdc2ff",
+            "inverse-surface": "#dfe2f1",
+            "tertiary-fixed": "#ffddb8",
+            "surface-tint": "#bdc2ff",
+            "error-container": "#93000a",
+            "on-primary-fixed": "#000865",
+            "surface": "#0f131d",
+            "outline": "#8f8fa0",
+            "on-tertiary": "#472a00",
+            "on-secondary": "#003824",
+            "on-primary-container": "#00108d",
+            "secondary-fixed-dim": "#4edea3",
+            "on-primary-fixed-variant": "#1d2fc3",
+            "outline-variant": "#454655",
+            "primary": "#bdc2ff",
+            "surface-container-lowest": "#0a0e18",
+            "secondary-container": "#00a572",
+            "secondary": "#4edea3",
+            "error": "#ffb4ab",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-container-high": "#262a35",
+            "on-primary": "#00139f",
+            "on-background": "#dfe2f1",
+            "surface-container-low": "#171b26",
+            "surface-dim": "#0f131d",
+            "inverse-primary": "#3c4cdb",
+            "on-error": "#690005",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-surface": "#dfe2f1",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-container-highest": "#313540",
+            "primary-fixed": "#dfe0ff",
+            "primary-container": "#7886ff",
+            "tertiary-container": "#ca8100",
+            "tertiary": "#ffb95f",
+            "on-error-container": "#ffdad6",
+            "surface-bright": "#353944",
+            "secondary-fixed": "#6ffbbe",
+            "surface-variant": "#313540",
+            "surface-container": "#1c1f2a"
+          },
+
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+
+          spacing: {
+            "space-xl": "2rem",
+            "space-2xl": "3rem",
+            margin: "2rem",
+            "space-2xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem",
+            gutter: "1.5rem",
+            "space-sm": "0.75rem",
+            "space-md": "1rem",
+            "space-xs": "0.5rem",
+            "space-lg": "1.5rem"
+          },
+
+          fontFamily: {
+            "body-md": ["Manrope"],
+            "body-lg": ["Manrope"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "title-md": ["Manrope"],
+            "label-badge": ["Manrope"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Manrope"],
+            "display-hero-mobile": ["Plus Jakarta Sans"],
+            "label-code": ["JetBrains Mono"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-hero": ["Plus Jakarta Sans"]
           }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-background font-body-md text-on-surface antialiased min-h-screen">
+
+  <!-- ========================================================
+       HEADER
+  ========================================================= -->
+
+  <header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.45)]">
+
+    <div class="h-28 w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col justify-between pt-space-xs pb-space-xs">
+
+      <div class="flex items-center justify-between h-14">
+
+        <div class="flex items-center gap-space-md">
+
+          <a class="flex items-center gap-space-sm" href="#">
+            <img
+              alt="Career Copilot Logo"
+              class="h-8 w-auto object-contain"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1WulXIdmjnfBMvbSw67U99vu01KlISsdFceqF1rw7P9BIXUR_sNMlpYAr2aY7FVcz2kzeJVMwTbcWxhxjD9R8ADbkreAxwvTIcQNvoRlEeUcCwY_OQJfEtRgDnxALk7CmmQCbZ4JHby0EDQhN9RwMZInG9V_G0mMqUOMrza0adpF1E72TItNbig7I58FJ_yzkooO9CeO43BtPBfinSUkxTxEA8I1Ucx3zBngm14dlTWIXTqFpxumxwMtCOT">
+
+            <span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">
+              Career Copilot
+            </span>
+          </a>
+
+          <div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-high">
+
+            <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+
+            <span
+              id="target-role-header"
+              class="font-label-code text-label-code text-on-surface uppercase tracking-wider font-semibold">
+              Target: Interview
+            </span>
+
+          </div>
+
+        </div>
+
+        <div class="flex items-center gap-space-md">
+
+          <div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container">
+
+            <span class="font-label-badge text-label-badge uppercase text-secondary font-bold">
+              Copilot v2.4
+            </span>
+
+            <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+
+            <span class="font-body-sm text-body-sm text-on-surface-variant">
+              Interview Active
+            </span>
+
+          </div>
+
+          <div class="flex items-center gap-space-sm pl-space-xs">
+
+            <div class="relative flex items-center">
+
+              <img
+                alt="Profile"
+                class="w-8 h-8 rounded-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCajukYYkSdWPP7DxDjjLUTkqwfn-juAWcWCxKvJbtl2Msm9fH6BbLgchnHj5Fl2kStYGCyTAtehBKLVylzNi8WaArSVSgr37fuC78xx52uZdl8QxBz81i_y_MY6VkPWMEgjvPOt05agdcR7L6CG1q8HQ7ZELYzko9xVmEno_qPHlG6_jXrhjMTsjQe4omxp4UiDWDGafRdKHtFaj63HEb-BQrd4_i0yRZJydXJ-5GNlN9gC5CVmX8ZA">
+
+              <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span>
+
+            </div>
+
+            <div class="hidden sm:flex flex-col text-left">
+
+              <span class="font-body-sm text-body-sm font-semibold text-on-surface">
+                Candidate
+              </span>
+
+              <span class="font-body-sm text-body-sm text-on-surface-variant">
+                Interview Session
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- NAV -->
+
+      <div class="flex items-center justify-between h-11">
+
+        <nav class="flex items-center gap-space-xs overflow-x-auto py-space-2xs">
+
+          <a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap"
+            href="#">
+            Setup &amp; Intake
+          </a>
+
+          <a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap"
+            href="#">
+            Career Analysis
+          </a>
+
+          <a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap"
+            href="#">
+            Action Roadmap
+          </a>
+
+          <a aria-current="page"
+            class="px-space-md py-space-2xs bg-primary-container text-on-primary-container font-semibold rounded-lg whitespace-nowrap"
+            href="#">
+            Interview Studio
+          </a>
+
+          <a class="px-space-md py-space-2xs rounded-lg font-body-md text-body-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors whitespace-nowrap"
+            href="#">
+            Profile &amp; Context
+          </a>
+
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-space-sm">
+
+          <div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-low">
+
+            <span
+              id="interview-status-pill"
+              class="font-label-code text-label-code text-secondary font-bold">
+              INTERVIEW ACTIVE
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ========================================================
+       MAIN
+  ========================================================= -->
+
+  <main class="w-full pt-28 bg-background min-h-[calc(100vh-140px)]">
+
+    <div class="flex flex-col w-full">
+
+
+      <!-- ====================================================
+           SESSION STRIP
+      ==================================================== -->
+
+      <section class="w-full bg-surface-container-lowest/70 border-b border-surface-container py-space-sm px-margin-mobile md:px-margin backdrop-blur-md">
+
+        <div class="max-w-[1360px] mx-auto flex flex-col md:flex-row items-center justify-between gap-space-sm">
+
+          <div class="flex flex-wrap items-center gap-space-sm">
+
+            <div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary/15 text-secondary text-xs font-semibold">
+
+              <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+
+              <span id="session-status-text">
+                Live Recording &amp; Evaluation
+              </span>
+
+            </div>
+
+            <span
+              id="target-role-strip"
+              class="text-body-sm font-semibold text-on-surface truncate">
+              Target: Interview
+            </span>
+
+            <span class="hidden sm:inline text-outline-variant">
+              •
+            </span>
+
+            <span
+              id="focus-skill"
+              class="inline-flex items-center gap-1 text-xs text-tertiary font-medium bg-tertiary-container/10 px-2 py-0.5 rounded-md">
+
+              <span class="material-symbols-outlined text-xs">
+                flag
+              </span>
+
+              Focus: Adaptive Interview
+
+            </span>
+
+          </div>
+
+
+          <div class="flex items-center gap-space-md w-full md:w-auto justify-between md:justify-end">
+
+            <div class="flex items-center gap-space-xs text-xs font-label-code text-on-surface-variant">
+
+              <span
+                id="question-progress-top"
+                class="text-on-surface font-semibold">
+                Question 1
+              </span>
+
+              <span class="text-outline-variant">
+                |
+              </span>
+
+              <span
+                id="timer-display"
+                class="text-on-surface font-medium">
+                00:00 ELAPSED
+              </span>
+
+            </div>
+
+
+            <!-- END INTERVIEW BUTTON -->
+
+            <button
+              id="btn-end-interview"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-error hover:text-on-surface px-space-sm py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright transition-colors"
+              type="button">
+
+              <span class="material-symbols-outlined text-sm">
+                cancel
+              </span>
+
+              <span>
+                End Interview
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ====================================================
+           MAIN CANVAS
+      ==================================================== -->
+
+      <div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin py-space-xl grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+
+
+        <!-- ==================================================
+             LEFT / INTERVIEW
+        ================================================== -->
+
+        <div class="lg:col-span-8 flex flex-col gap-space-lg">
+
+
+          <!-- QUESTION -->
+
+          <section class="rounded-xl bg-surface-container-low p-space-lg flex flex-col gap-space-md shadow-sm">
+
+            <div class="flex items-center justify-between">
+
+              <div class="flex items-center gap-space-sm">
+
+                <div class="relative flex-shrink-0">
+
+                  <img
+                    alt="AI Interviewer"
+                    class="w-10 h-10 rounded-full object-cover ring-1 ring-surface-container-highest"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrguuYXX7y79NpvYgi7vW9b-ViWtMV5sdDaPNHxUaSE3hoA5_kWFeouXeGnDCCSYvClu7x_CyzOB3YwViCQkBW94JbgCT_Wp52gPIXVLvbYT2NyUKDUU1QS6p9FAtnm4lkmxI1L0lz7U-K9V1gGeNMFmKdzDTxAUy4AT_jhUtBtTUG-0_MxxMOeRIXRtFWt7xbz1ABzcO4UKFwfscxJOvQZUXY_ILMbqPwqlE-dQxDbIh1XlORxSpMTw">
+
+                  <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-low"></span>
+
+                </div>
+
+                <div>
+
+                  <div class="flex items-center gap-space-xs">
+
+                    <h2 class="font-title-md text-title-md font-bold text-on-surface">
+                      AI Interviewer
+                    </h2>
+
+                    <span class="text-[11px] text-on-surface-variant font-label-badge uppercase tracking-wider bg-surface-container-high px-1.5 py-0.5 rounded">
+                      Adaptive Evaluator
+                    </span>
+
+                  </div>
+
+                  <span class="text-xs text-secondary flex items-center gap-1 mt-0.5">
+
+                    <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+
+                    Active &amp; Listening
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="hidden sm:flex items-center gap-1 text-xs font-label-code text-on-surface-variant bg-surface-container px-space-sm py-1 rounded-full">
+
+                <span class="font-semibold text-primary">
+                  LIVE
+                </span>
+
+                <span class="text-outline-variant">
+                  /
+                </span>
+
+                <span id="question-type-label">
+                  PRIMARY
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="pt-space-xs border-t border-surface-container/60">
+
+              <p
+                id="question-text"
+                class="font-headline-sm text-headline-sm text-on-surface font-medium leading-relaxed">
+                Preparing your interview question...
+              </p>
+
+            </div>
+
+          </section>
+
+
+          <!-- RESPONSE -->
+
+          <section class="rounded-xl bg-surface-container-low p-space-lg flex flex-col gap-space-md shadow-sm">
+
+
+            <!-- AUDIO HEADER -->
+
+            <div class="flex items-center justify-between">
+
+              <div class="flex items-center gap-space-sm">
+
+                <div class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center text-secondary">
+
+                  <span class="material-symbols-outlined text-base">
+                    mic
+                  </span>
+
+                </div>
+
+                <div class="flex flex-col">
+
+                  <span
+                    id="recording-status"
+                    class="text-sm font-semibold text-on-surface">
+                    Ready to record
+                  </span>
+
+                  <span
+                    id="recording-description"
+                    class="text-xs text-on-surface-variant">
+                    Click Start Recording when you are ready.
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <!-- WAVEFORM -->
+
+              <div class="flex items-center gap-1 h-5 px-space-sm py-1 rounded-full bg-surface-container-lowest">
+
+                <span class="w-1 bg-secondary rounded-full h-1.5 animate-pulse"></span>
+                <span class="w-1 bg-secondary rounded-full h-4 animate-pulse"></span>
+                <span class="w-1 bg-secondary rounded-full h-2 animate-pulse"></span>
+                <span class="w-1 bg-secondary rounded-full h-5 animate-pulse"></span>
+                <span class="w-1 bg-secondary rounded-full h-3 animate-pulse"></span>
+                <span class="w-1 bg-secondary/70 rounded-full h-1.5 animate-pulse"></span>
+
+              </div>
+
+            </div>
+
+
+            <!-- TRANSCRIPT -->
+
+            <div class="p-space-md rounded-lg bg-surface-container-lowest/60 min-h-[140px] flex flex-col justify-between">
+
+              <p
+                id="transcript-stream"
+                class="font-body-lg text-body-lg text-on-surface/90 leading-relaxed">
+                Your response will appear here after recording.
+              </p>
+
+
+              <div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-md mt-space-sm border-t border-surface-container/40 text-xs text-on-surface-variant font-label-code">
+
+                <div class="flex items-center gap-space-md font-label-code text-xs text-on-surface-variant">
+
+                  <span
+                    id="audio-state"
+                    class="flex items-center gap-1 text-secondary font-medium">
+
+                    <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+
+                    Ready
+
+                  </span>
+
+                  <span>
+                    •
+                  </span>
+
+                  <span id="word-count">
+                    0 words
+                  </span>
+
+                  <span>
+                    •
+                  </span>
+
+                  <span id="answer-duration">
+                    00:00
+                  </span>
+
+                </div>
+
+                <div class="text-xs text-on-surface-variant font-label-code">
+
+                  <span id="save-status">
+                    Session active
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+
+              <div class="flex items-center gap-space-sm">
+
+                <button
+                  id="record-btn"
+                  class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-secondary hover:opacity-90 text-on-secondary text-xs font-semibold transition-colors"
+                  type="button">
+
+                  <span
+                    id="record-icon"
+                    class="material-symbols-outlined text-base">
+                    mic
+                  </span>
+
+                  <span id="record-label">
+                    Start Recording
+                  </span>
+
+                </button>
+
+
+                <button
+                  id="btn-pause-recording"
+                  class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-xs font-semibold text-on-surface transition-colors ring-1 ring-surface-container-highest"
+                  type="button"
+                  disabled>
+
+                  <span class="material-symbols-outlined text-base text-secondary">
+                    pause_circle
+                  </span>
+
+                  <span>
+                    Pause Recording
+                  </span>
+
+                </button>
+
+
+                <button
+                  id="btn-restart-recording"
+                  class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-xs font-semibold text-on-surface-variant hover:text-error transition-colors"
+                  type="button">
+
+                  <span class="material-symbols-outlined text-sm">
+                    restart_alt
+                  </span>
+
+                  <span>
+                    Restart Answer
+                  </span>
+
+                </button>
+
+              </div>
+
+
+              <button
+                id="submit-answer-btn"
+                class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-full bg-primary-container hover:opacity-90 text-on-primary-container font-title-md text-sm font-semibold transition-all shadow-sm"
+                type="button">
+
+                <span>
+                  Submit Answer &amp; Next
+                </span>
+
+                <span class="material-symbols-outlined text-base">
+                  arrow_forward
+                </span>
+
+              </button>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <!-- ==================================================
+             RIGHT SIDEBAR
+        ================================================== -->
+
+        <aside class="lg:col-span-4 flex flex-col gap-space-md">
+
+
+          <!-- PROGRESS -->
+
+          <div class="rounded-xl bg-surface-container-low p-space-md shadow-sm flex flex-col gap-space-xs">
+
+            <div class="flex items-center justify-between pb-space-xs border-b border-surface-container/60">
+
+              <span class="text-xs font-label-badge uppercase tracking-wider text-on-surface-variant font-bold">
+                Simulation Progress
+              </span>
+
+              <span
+                id="question-progress"
+                class="text-on-surface font-semibold">
+                Question 1
+              </span>
+
+            </div>
+
+
+            <!-- DYNAMIC QUESTION LIST -->
+
+            <div
+              id="question-timeline"
+              class="flex flex-col gap-1 pt-space-xs">
+
+              <div class="py-3 text-xs text-on-surface-variant">
+                Interview questions will appear here.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CONTEXT -->
+
+          <div class="rounded-xl bg-surface-container-low p-space-md shadow-sm flex flex-col gap-space-md">
+
+
+            <!-- SKILL -->
+
+            <div>
+
+              <div class="flex items-center justify-between mb-space-xs">
+
+                <div class="flex items-center gap-1.5 text-xs font-bold text-on-surface">
+
+                  <span class="material-symbols-outlined text-secondary text-sm">
+                    target
+                  </span>
+
+                  <span>
+                    Current Skill
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="p-space-xs rounded bg-surface-container-lowest/60 text-xs">
+
+                <p
+                  id="current-skill"
+                  class="font-semibold text-on-surface">
+                  Preparing...
+                </p>
+
+                <p
+                  id="current-question-type"
+                  class="text-on-surface-variant text-[11px] mt-1">
+                  Waiting for interview question
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <!-- EVALUATION -->
+
+            <div class="pt-space-xs border-t border-surface-container/60">
+
+              <div class="flex items-center gap-1.5 text-xs font-bold text-on-surface mb-space-xs">
+
+                <span class="material-symbols-outlined text-tertiary text-sm">
+                  analytics
+                </span>
+
+                <span>
+                  Latest Evaluation
+                </span>
+
+              </div>
+
+
+              <div class="grid grid-cols-2 gap-2">
+
+                <div class="p-2 rounded bg-surface-container-lowest/60">
+
+                  <p class="text-[10px] text-on-surface-variant uppercase">
+                    Technical
+                  </p>
+
+                  <p
+                    id="technical-score"
+                    class="text-lg font-bold text-on-surface">
+                    —
+                  </p>
+
+                </div>
+
+
+                <div class="p-2 rounded bg-surface-container-lowest/60">
+
+                  <p class="text-[10px] text-on-surface-variant uppercase">
+                    Communication
+                  </p>
+
+                  <p
+                    id="communication-score"
+                    class="text-lg font-bold text-on-surface">
+                    —
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- FEEDBACK -->
+
+            <div class="pt-space-xs border-t border-surface-container/60">
+
+              <div class="flex items-center gap-1.5 text-xs font-bold text-on-surface mb-space-xs">
+
+                <span class="material-symbols-outlined text-secondary text-sm">
+                  tips_and_updates
+                </span>
+
+                <span>
+                  Latest Feedback
+                </span>
+
+              </div>
+
+              <p
+                id="latest-feedback"
+                class="text-xs text-on-surface-variant">
+                Your evaluation feedback will appear here after you submit an answer.
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ========================================================
+       FOOTER
+  ========================================================= -->
+
+  <footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.3)]">
+
+    <div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col md:flex-row items-center justify-between gap-space-md">
+
+      <div class="flex items-center gap-space-sm">
+
+        <span class="font-body-sm text-body-sm text-on-surface-variant">
+          © 2025 Career Copilot Systems
+        </span>
+
+      </div>
+
+      <div class="flex items-center gap-space-lg">
+
+        <span class="font-body-sm text-body-sm text-on-surface-variant">
+          Adaptive Interview Engine
+        </span>
+
+        <span class="font-body-sm text-body-sm text-on-surface-variant">
+          Speech Evaluation
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ========================================================
+       SCRIPTS
+  ========================================================= -->
+
+  <script src="../js/session.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/interview.js"></script>
+
+
+  <!-- ========================================================
+       SMALL UI INTEGRATION SCRIPT
+  ========================================================= -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const endButton =
+        document.getElementById("btn-end-interview");
+
+
+      /*
+       * END INTERVIEW
+       *
+       * We intentionally use the existing finishInterview()
+       * function from interview.js.
+       */
+
+      if (endButton) {
+
+        endButton.addEventListener("click", async () => {
+
+          const confirmed = window.confirm(
+            "Are you sure you want to end this interview? Your current interview progress will be used to generate the report."
+          );
+
+          if (!confirmed) {
+            return;
+          }
+
+          endButton.disabled = true;
+
+          endButton.innerHTML = `
+            <span class="material-symbols-outlined text-sm animate-spin">
+              progress_activity
+            </span>
+            <span>Ending...</span>
+          `;
+
+          try {
+
+            if (typeof finishInterview === "function") {
+
+              await finishInterview();
+
+            } else {
+
+              console.error(
+                "finishInterview() is not available."
+              );
+
+              alert(
+                "Unable to end the interview. Please refresh and try again."
+              );
+
+            }
+
+          } catch (error) {
+
+            console.error(
+              "End interview failed:",
+              error
+            );
+
+            endButton.disabled = false;
+
+            endButton.innerHTML = `
+              <span class="material-symbols-outlined text-sm">
+                cancel
+              </span>
+              <span>End Interview</span>
+            `;
+
+          }
+
         });
+
       }
 
-      // Simple Elapsed Seconds Counter
-      let seconds = 522; // 08:42
-      const timerDisplay = document.getElementById('timer-display');
-      if (timerDisplay) {
-        setInterval(function() {
-          seconds++;
-          const mins = Math.floor(seconds / 60);
-          const secs = seconds % 60;
-          const formatted = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs + ' ELAPSED';
-          timerDisplay.textContent = formatted;
-        }, 1000);
-      }
-    })();
+    });
+
   </script>
-</div></main><footer class="w-full bg-surface-container-lowest py-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.3)]"><div class="w-full max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Career Copilot Logo" class="h-6 w-auto object-contain opacity-75" src="https://lh3.googleusercontent.com/aida/AEtjO1WulXIdmjnfBMvbSw67U99vu01KlISsdFceqF1rw7P9BIXUR_sNMlpYAr2aY7FVcz2kzeJVMwTbcWxhxjD9R8ADbkreAxwvTIcQNvoRlEeUcCwY_OQJfEtRgDnxALk7CmmQCbZ4JHby0EDQhN9RwMZInG9V_G0mMqUOMrza0adpF1E72TItNbig7I58FJ_yzkooO9CeO43BtPBfinSUkxTxEA8I1Ucx3zBngm14dlTWIXTqFpxumxwMtCOT"/><span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Career Copilot Systems. High-Stakes Career Strategy &amp; Executive Readiness.</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Role Benchmark Rubrics</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Competency Graph</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy &amp; Data Vault</a></div></div></footer></body></html>
+
+</body>
+
+</html>

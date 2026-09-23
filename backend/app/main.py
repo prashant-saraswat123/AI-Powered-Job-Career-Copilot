@@ -10,6 +10,8 @@ from app.ai.foundry_ai import FoundryAIService
 from app.services.analysis_service import analyze_candidate
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.v1.router import api_router
+
 
 app = FastAPI(
     title="CareerForge AI",
@@ -27,6 +29,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(api_router, prefix="/api")
 
 ai_service = FoundryAIService()
 
