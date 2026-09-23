@@ -6,22 +6,25 @@ from app.schemas.analysis import (
 
 
 def extract_skill_gaps(
-    matches: list[RequirementMatch],
+    requirement_analysis: list[RequirementMatch],
 ) -> SkillGapResult:
 
-    gaps = []
+    skill_gaps : list[SkillGap] = []
 
-    for match in matches:
+    for match in requirement_analysis:
+        if match.requirement_kind != "skill":
+            continue
 
-        if match.status in ["gap", "partial_match"]:
+        if match.status not in ["gap", "partial_match"]:
+            continue
 
-            gaps.append(
-                SkillGap(
-                    skill=match.requirement,
-                    priority=match.priority,
-                    required_level=match.required_level,
-                    reason=match.reason,
-                )
+        skill_gaps.append(
+            SkillGap(
+                skill=match.requirement,
+                priority=match.priority,
+                required_level=match.required_level,
+                reason=match.reason,
             )
+        )
 
-    return SkillGapResult(skill_gaps=gaps)
+    return SkillGapResult(skill_gaps=skill_gaps)

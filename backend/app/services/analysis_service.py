@@ -1,6 +1,5 @@
 from app.ai.base import AIService
 from app.schemas.analysis import AnalysisResult
-from app.services.matcher import match_requirements
 from app.services.gap_analyzer import extract_skill_gaps
 
 
@@ -14,7 +13,7 @@ async def analyze_candidate(
 
     job_profile = await ai_service.analyze_job(job_text)
 
-    requirement_analysis = match_requirements(
+    requirement_analysis = await ai_service.match_requirements(
         candidate_profile,
         job_profile
     )

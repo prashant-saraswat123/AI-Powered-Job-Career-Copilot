@@ -1,6 +1,7 @@
 from pathlib import Path
 
-import fitz #PyMuPDF
+import pymupdf as fitz
+
 from docx import Document
 
 def extract_text_from_pdf(file_path: str) -> str:

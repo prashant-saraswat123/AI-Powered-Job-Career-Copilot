@@ -138,44 +138,56 @@ class InterviewService:
 
         elif decision.action == AdaptiveAction.CONFIRM_GAP_AND_ADVANCE:
             # Confirm current skill as a gap
-            current_skill_id = session.skills_to_test[session.current_skill_index]
-            if current_skill_id not in session.confirmed_skill_gaps:
-                session.confirmed_skill_gaps.append(current_skill_id)
+            if session.current_skill_index < len(session.skills_to_test):
+                current_skill_id = session.skills_to_test[session.current_skill_index]
+                if current_skill_id not in session.confirmed_skill_gaps:
+                    session.confirmed_skill_gaps.append(current_skill_id)
 
             session.current_skill_index += 1
             session.current_skill_followups = 0
 
-            next_skill_id = session.skills_to_test[session.current_skill_index]
-            next_question = await self._generate_primary_question(
-                skill_id=next_skill_id,
-                target_role=session.candidate_profile.target_role,
-                difficulty="intermediate",
-            )
-            session.turns.append(
-                InterviewTurn(
-                    turn_number=len(session.turns) + 1,
-                    question=next_question,
+            if session.current_skill_index < len(session.skills_to_test):
+                next_skill_id = session.skills_to_test[session.current_skill_index]
+                next_question = await self._generate_primary_question(
+                    skill_id=next_skill_id,
+                    target_role=session.candidate_profile.target_role,
+                    difficulty="intermediate",
                 )
-            )
+                session.turns.append(
+                    InterviewTurn(
+                        turn_number=len(session.turns) + 1,
+                        question=next_question,
+                    )
+                )
+            else:
+                session.status = "COMPLETED"
 
         elif decision.action == AdaptiveAction.ADVANCE_NEXT_SKILL:
             session.current_skill_index += 1
             session.current_skill_followups = 0
 
-            next_skill_id = session.skills_to_test[session.current_skill_index]
-            next_question = await self._generate_primary_question(
-                skill_id=next_skill_id,
-                target_role=session.candidate_profile.target_role,
-                difficulty="intermediate",
-            )
-            session.turns.append(
-                InterviewTurn(
-                    turn_number=len(session.turns) + 1,
-                    question=next_question,
+            if session.current_skill_index < len(session.skills_to_test):
+                next_skill_id = session.skills_to_test[session.current_skill_index]
+                next_question = await self._generate_primary_question(
+                    skill_id=next_skill_id,
+                    target_role=session.candidate_profile.target_role,
+                    difficulty="intermediate",
                 )
-            )
+                session.turns.append(
+                    InterviewTurn(
+                        turn_number=len(session.turns) + 1,
+                        question=next_question,
+                    )
+                )
+            else:
+                session.status = "COMPLETED"
 
         elif decision.action == AdaptiveAction.COMPLETE_INTERVIEW:
+            if not evaluation.is_satisfactory or evaluation.technical_score < 6.0:
+                if session.current_skill_index < len(session.skills_to_test):
+                    curr_skill = session.skills_to_test[session.current_skill_index]
+                    if curr_skill not in session.confirmed_skill_gaps:
+                        session.confirmed_skill_gaps.append(curr_skill)
             session.status = "COMPLETED"
 
         session.updated_at = datetime.now(timezone.utc)

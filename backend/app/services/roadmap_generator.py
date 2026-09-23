@@ -149,6 +149,17 @@ Example structure:
 """
 
 
+def _parse_effort_hours(val, default: float = 1.0) -> float:
+    if isinstance(val, (int, float)):
+        return max(0.5, float(val))
+    if isinstance(val, str):
+        import re
+        match = re.search(r"[-+]?\d*\.?\d+", val)
+        if match:
+            return max(0.5, float(match.group()))
+    return float(default)
+
+
 def generate_roadmap(payload: RoadmapRequest) -> RoadmapResponse:
     ai = FoundryAIService()
 
@@ -218,7 +229,15 @@ Return the complete roadmap JSON now.
         },
     )
 
-    content = response.choices[0].message.content
+    content = response.choices[0].message.content or "{}"
+    content = content.strip()
+    if content.startswith("```json"):
+        content = content[7:]
+    elif content.startswith("```"):
+        content = content[3:]
+    if content.endswith("```"):
+        content = content[:-3]
+    content = content.strip()
 
     import json
 
@@ -268,7 +287,7 @@ Return the complete roadmap JSON now.
                     code=f"MILESTONE {phase_index + 1}.{milestone_index + 1}",
                     title=raw_milestone["title"],
                     description=raw_milestone["description"],
-                    effort_hours=float(
+                    effort_hours=_parse_effort_hours(
                         raw_milestone.get(
                             "effort_hours",
                             1,

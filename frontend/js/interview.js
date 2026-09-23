@@ -216,18 +216,18 @@ function normalizeSkillId(name) {
 // LOAD EXISTING INTERVIEW
 // ============================================================
 
-async function loadInterviewState() {
+async function loadInterviewState(targetId = null) {
 
-    const response =
-        await fetch(
-            `${window.CareerForgeApi.API_BASE_URL || "http://127.0.0.1:8000"}/api/v1/interviews/${interviewId}/state`
-        );
+    const idToLoad = targetId || interviewId;
 
-    if (!response.ok) {
-        throw new Error("Could not load interview state.");
+    if (!idToLoad) {
+        throw new Error("Interview ID is missing.");
     }
 
-    const state = await response.json();
+    interviewId = idToLoad;
+
+    const state =
+        await window.CareerForgeApi.getInterviewState(idToLoad);
 
     console.log("Interview state:", state);
 
@@ -605,40 +605,8 @@ async function submitAnswer() {
         // 1. SEND WAV TO SPEECH ENDPOINT
         // ----------------------------------------------------
 
-        const formData =
-            new FormData();
-
-        formData.append(
-            "audio",
-            audioBlob,
-            "answer.wav"
-        );
-
-        const baseUrl =
-            window.CareerForgeApi.API_BASE_URL ||
-            "http://127.0.0.1:8000";
-
-        const transcriptionResponse =
-            await fetch(
-                `${baseUrl}/api/v1/interviews/transcribe`,
-                {
-                    method: "POST",
-                    body: formData
-                }
-            );
-
-        if (!transcriptionResponse.ok) {
-
-            const errorText =
-                await transcriptionResponse.text();
-
-            throw new Error(
-                `Transcription failed: ${errorText}`
-            );
-        }
-
         const transcription =
-            await transcriptionResponse.json();
+            await window.CareerForgeApi.transcribeInterviewAudio(audioBlob);
 
         const answerText =
             transcription.text || "";

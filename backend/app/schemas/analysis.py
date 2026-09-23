@@ -9,12 +9,11 @@ class Project(BaseModel):
 
 
 class Experience(BaseModel):
-    company: str
-    role: str
+    company: str | None = None
+    role: str | None = None
     description: str = ""
     skills: list[str] = []
     evidence: list[str] = []
-
 
 class Skill(BaseModel):
     name: str
@@ -69,6 +68,14 @@ Priority = Literal[
 class RequirementMatch(BaseModel):
     requirement: str
     requirement_type: Literal["required", "preferred"]
+
+    requirement_kind: Literal[
+    "skill",
+    "qualification",
+    "experience",
+    "certification",
+    "other",
+]
 
     status: MatchStatus
 

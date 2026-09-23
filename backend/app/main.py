@@ -1,10 +1,17 @@
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()
+_BACKEND_DIR = Path(__file__).resolve().parent.parent
+_ENV_FILE = _BACKEND_DIR / ".env"
+if _ENV_FILE.exists():
+    load_dotenv(_ENV_FILE)
+else:
+    load_dotenv()
+
+UPLOAD_DIR = _BACKEND_DIR / "uploads"
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
-from pathlib import Path
-
 from app.services.document_parser import extract_text
 from app.ai.foundry_ai import FoundryAIService
 from app.services.analysis_service import analyze_candidate
@@ -67,7 +74,7 @@ async def extract_document(file: UploadFile = File(...)):
             detail="Only PDF and DOCX files are supported."
         )
 
-    file_path = Path("uploads") / file.filename
+    file_path = UPLOAD_DIR / file.filename
 
     contents = await file.read()
 
@@ -103,7 +110,7 @@ async def analyze_resume(file: UploadFile = File(...)):
             detail="Only PDF and DOCX files are supported."
         )
 
-    file_path = Path("uploads") / file.filename
+    file_path = UPLOAD_DIR / file.filename
 
     contents = await file.read()
 
@@ -137,7 +144,7 @@ async def analyze_job(file: UploadFile = File(...)):
             detail="Only PDF and DOCX files are supported."
         )
 
-    file_path = Path("uploads") / file.filename
+    file_path = UPLOAD_DIR / file.filename
 
     contents = await file.read()
 
@@ -180,7 +187,7 @@ async def analyze(
             detail="Job description cannot be empty."
         )
 
-    resume_path = Path("uploads") / resume.filename
+    resume_path = UPLOAD_DIR / resume.filename
 
     resume_contents = await resume.read()
 

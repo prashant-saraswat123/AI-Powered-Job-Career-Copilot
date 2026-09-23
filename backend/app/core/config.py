@@ -1,6 +1,9 @@
-"""Application configuration settings using Pydantic Settings."""
-
+from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import model_validator
+
+_BACKEND_DIR = Path(__file__).resolve().parent.parent.parent
+_ENV_FILE = _BACKEND_DIR / ".env" if (_BACKEND_DIR / ".env").exists() else Path(".env")
 
 
 class Settings(BaseSettings):
@@ -11,6 +14,7 @@ class Settings(BaseSettings):
         "https://careerforge-foundry-korea.services.ai.azure.com/api/projects/careerforge"
     )
     FOUNDRY_API_KEY: str = ""
+    FOUNDRY_MODEL: str = ""
     FOUNDRY_MODEL_DEPLOYMENT: str = "gpt-4.1-mini"
     FOUNDRY_PROJECT_NAME: str = "careerforge"
 
@@ -24,10 +28,16 @@ class Settings(BaseSettings):
     DEBUG: bool = False
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=str(_ENV_FILE),
         env_file_encoding="utf-8",
         extra="ignore",
     )
+
+    @model_validator(mode="after")
+    def sync_model_deployment(self):
+        if self.FOUNDRY_MODEL:
+            self.FOUNDRY_MODEL_DEPLOYMENT = self.FOUNDRY_MODEL
+        return self
 
     @property
     def foundry_base_url(self) -> str:

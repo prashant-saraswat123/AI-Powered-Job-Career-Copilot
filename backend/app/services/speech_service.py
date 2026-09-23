@@ -17,27 +17,43 @@ class SpeechService:
     def transcribe_audio(self, audio_file_path: str) -> str:
         """Convert an audio file into text."""
 
-        audio_config = speechsdk.audio.AudioConfig(
-            filename=audio_file_path
-        )
+        audio_config = None
+        recognizer = None
 
-        recognizer = speechsdk.SpeechRecognizer(
-            speech_config=self.speech_config,
-            audio_config=audio_config,
-        )
-
-        result = recognizer.recognize_once()
-
-        if result.reason == speechsdk.ResultReason.RecognizedSpeech:
-            return result.text
-
-        if result.reason == speechsdk.ResultReason.NoMatch:
-            raise ValueError("No speech could be recognized.")
-
-        if result.reason == speechsdk.ResultReason.Canceled:
-            cancellation = result.cancellation_details
-            raise RuntimeError(
-                f"Speech recognition cancelled: {cancellation.reason}"
+        try:
+            audio_config = speechsdk.audio.AudioConfig(
+                filename=audio_file_path
             )
 
-        raise RuntimeError("Speech recognition failed.")
+            recognizer = speechsdk.SpeechRecognizer(
+                speech_config=self.speech_config,
+                audio_config=audio_config,
+            )
+
+            result = recognizer.recognize_once()
+
+            if result.reason == speechsdk.ResultReason.RecognizedSpeech:
+                return result.text
+
+            if result.reason == speechsdk.ResultReason.NoMatch:
+                raise ValueError("No speech could be recognized.")
+
+            if result.reason == speechsdk.ResultReason.Canceled:
+                cancellation = result.cancellation_details
+                raise RuntimeError(
+                    f"Speech recognition cancelled: {cancellation.reason}"
+                )
+
+            raise RuntimeError("Speech recognition failed.")
+
+        finally:
+            if recognizer is not None:
+                try:
+                    del recognizer
+                except Exception:
+                    pass
+            if audio_config is not None:
+                try:
+                    del audio_config
+                except Exception:
+                    pass
