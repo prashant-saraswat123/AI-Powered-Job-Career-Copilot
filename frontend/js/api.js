@@ -118,6 +118,21 @@ async function generateRoadmap(payload) {
     });
 }
 
+async function generateRoadmapFromGaps(payload) {
+    if (!payload) {
+        throw new Error("Roadmap payload is missing.");
+    }
+
+    if (!payload.gaps || !payload.gaps.length) {
+        throw new Error("No skill gaps were provided.");
+    }
+
+    return request("/api/roadmap/generate", {
+        method: "POST",
+        body: JSON.stringify(payload)
+    });
+}
+
 
 /* ============================================================
    STEP 3
@@ -298,6 +313,7 @@ window.CareerForgeApi = {
 
     analyzeCandidate,
     generateRoadmap,
+    generateRoadmapFromGaps,
 
     generateInterviewQuestions,
     evaluateInterview,

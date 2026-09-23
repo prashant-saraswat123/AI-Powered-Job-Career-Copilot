@@ -871,36 +871,179 @@ function renderGapDrawer(skillGaps, requirements) {
    ========================================================= */
 
 function setupNavigation() {
+
     /*
-     * Analysis should not directly call roadmap/interview APIs.
+     * Build My Roadmap
      *
-     * Those modules will have their own contracts.
-     *
-     * For now, these buttons only navigate to their pages.
+     * This is the ONLY place where the roadmap generation
+     * flow should be triggered from the analysis page.
      */
+    const buildRoadmapButton =
+        document.getElementById("build-roadmap-btn");
 
-    const roadmapButtons =
-    document.querySelectorAll(
-        '[data-action="roadmap"], #open-roadmap-btn'
-    );
-
-    roadmapButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            window.location.href = "roadmap.html";
-        });
-    });
+    if (buildRoadmapButton) {
+        buildRoadmapButton.addEventListener(
+            "click",
+            buildRoadmap
+        );
+    }
 
 
+    /*
+     * Interview navigation
+     */
     const interviewButtons =
-    document.querySelectorAll(
-        '[data-action="interview"], #open-interview-btn'
-    );
+        document.querySelectorAll(
+            '[data-action="interview"], #open-interview-btn'
+        );
 
     interviewButtons.forEach(button => {
         button.addEventListener("click", () => {
             window.location.href = "interview.html";
         });
     });
+}
+
+async function buildRoadmap() {
+    try {
+        console.log(
+            "🗺️ User clicked Build My Roadmap"
+        );
+
+        const button =
+            document.getElementById(
+                "build-roadmap-btn"
+            );
+
+        if (button) {
+            button.disabled = true;
+            button.textContent =
+                "Building Roadmap...";
+        }
+
+        const payload =
+            buildRoadmapPayload();
+
+        console.log(
+            "🗺️ Roadmap payload:",
+            payload
+        );
+
+        const roadmap =
+            await window.CareerForgeApi
+                .generateRoadmapFromGaps(
+                    payload
+                );
+
+        console.log(
+            "🗺️ Roadmap generated:",
+            roadmap
+        );
+
+        window.CareerForgeSession
+            .setRoadmap(roadmap);
+
+        window.location.href =
+            "roadmap.html";
+
+    } catch (error) {
+        console.error(
+            "❌ Roadmap generation failed:",
+            error
+        );
+
+        const button =
+            document.getElementById(
+                "build-roadmap-btn"
+            );
+
+        if (button) {
+            button.disabled = false;
+            button.textContent =
+                "Build My Roadmap";
+        }
+
+        alert(
+            error.message ||
+            "Could not generate your roadmap."
+        );
+    }
+}
+
+function buildRoadmapPayload() {
+    const session =
+        window.CareerForgeSession.getSession();
+
+    if (!session) {
+        throw new Error("CareerForge session is missing.");
+    }
+
+    const analysis = session.analysis;
+
+    if (!analysis) {
+        throw new Error(
+            "Analysis data is missing. Please run the analysis first."
+        );
+    }
+
+    const rawGaps =
+        analysis.skill_gaps?.skill_gaps || [];
+
+    if (!rawGaps.length) {
+        throw new Error(
+            "No skill gaps were identified, so a roadmap cannot be generated."
+        );
+    }
+
+    const gaps = rawGaps.map((gap, index) => {
+        const skill =
+            gap.skill ||
+            `Skill ${index + 1}`;
+
+        const gapId =
+            skill
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-|-$/g, "") ||
+            `gap-${index + 1}`;
+
+        return {
+            gap_id: gapId,
+
+            title: skill,
+
+            category: "skill",
+
+            priority:
+                gap.priority || "medium",
+
+            reason:
+                gap.reason ||
+                "Skill requires further development.",
+
+            required_level:
+                gap.required_level || null
+        };
+    });
+
+    return {
+        candidate_name:
+            analysis.candidate_profile?.name || null,
+
+        target_role:
+            session.targetRole ||
+            analysis.job_profile?.title ||
+            "Target Role",
+
+        target_company:
+            session.company || null,
+
+        weekly_hours_available: 10,
+
+        sprint_weeks: 4,
+
+        gaps
+    };
 }
 
 

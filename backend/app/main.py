@@ -9,6 +9,7 @@ from app.services.document_parser import extract_text
 from app.ai.foundry_ai import FoundryAIService
 from app.services.analysis_service import analyze_candidate
 from fastapi.middleware.cors import CORSMiddleware
+from app.api.v1.endpoints.roadmap import router as roadmap_router
 
 from app.api.v1.router import api_router
 
@@ -31,6 +32,10 @@ app.add_middleware(
 )
 
 app.include_router(api_router, prefix="/api")
+app.include_router(
+    roadmap_router,
+    prefix="/api",
+)
 
 ai_service = FoundryAIService()
 
